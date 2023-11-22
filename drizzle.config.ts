@@ -4,6 +4,7 @@ import { env } from "~/env.mjs";
 
 export default {
   schema: "./src/server/db/schema.ts",
+  out: "./drizzle/migrations",
   driver: "pg",
   dbCredentials: {
     connectionString: env.POSTGRES_URL,

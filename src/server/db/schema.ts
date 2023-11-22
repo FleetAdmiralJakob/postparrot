@@ -21,13 +21,13 @@ export const posts = pgTable(
   "post",
   {
     id: serial('id').primaryKey(),
-    name: varchar("name", { length: 256 }),
+    content: varchar("content", { length: 256 }),
     createdAt: timestamp("created_at")
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),
     updatedAt: timestamp("updatedAt").default(sql`CURRENT_TIMESTAMP`)
   },
   (example) => ({
-    nameIndex: index("name_idx").on(example.name),
+    nameIndex: index("name_idx").on(example.content),
   })
 );

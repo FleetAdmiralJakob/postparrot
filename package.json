@@ -5,7 +5,9 @@
   "scripts": {
     "build": "next build",
     "db:push": "dotenv drizzle-kit push:pg",
-    "db:studio": "dotenv drizzle-kit studio",
+    "db:studio": "dotenv drizzle-kit studio --host 127.0.0.1",
+    "migrations:generate": "dotenv drizzle-kit generate:pg",
+    "migrations:push": "dotenv pnpm tsx src/server/db/migrate.ts",
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start"
@@ -42,6 +44,7 @@
     "prettier": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.5.1",
     "tailwindcss": "^3.3.3",
+    "tsx": "^4.3.0",
     "typescript": "^5.1.6"
   },
   "ct3aMetadata": {
