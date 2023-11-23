@@ -11,6 +11,7 @@ import superjson from "superjson";
 import { ZodError } from "zod";
 
 import { db } from "~/server/db";
+import { auth } from "@clerk/nextjs";
 
 /**
  * 1. CONTEXT
@@ -24,8 +25,11 @@ import { db } from "~/server/db";
  * @see https://trpc.io/docs/server/context
  */
 export const createTRPCContext = async (opts: { headers: Headers }) => {
+  const { userId } = auth();
+
   return {
     db,
+    userId,
     ...opts,
   };
 };

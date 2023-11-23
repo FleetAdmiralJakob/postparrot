@@ -15,6 +15,13 @@
       "when": 1700679483285,
       "tag": "0001_worried_cyclops",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1700761440493,
+      "tag": "0002_legal_shard",
+      "breakpoints": true
     }
   ]
 }

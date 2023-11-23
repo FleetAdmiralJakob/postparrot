@@ -1,0 +1,1 @@
+ALTER TABLE "new-twitter-clone_post" ADD COLUMN "user_id" varchar NOT NULL;

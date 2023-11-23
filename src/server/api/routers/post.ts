@@ -7,11 +7,11 @@ export const postRouter = createTRPCRouter({
   create: publicProcedure
     .input(z.object({ content: z.string().min(1) }))
     .mutation(async ({ ctx, input }) => {
-      // simulate a slow db call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      if (!ctx.userId) throw new Error("Not logged in");
 
       await ctx.db.insert(posts).values({
         content: input.content,
+        userId: ctx.userId,
       });
     }),
 
