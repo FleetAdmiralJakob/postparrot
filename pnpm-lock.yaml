@@ -27,8 +27,8 @@ dependencies:
     specifier: ^0.5.1
     version: 0.5.1
   drizzle-orm:
-    specifier: ^0.28.5
-    version: 0.28.6(@vercel/postgres@0.5.1)(pg@8.11.3)
+    specifier: ^0.29.0
+    version: 0.29.0(@vercel/postgres@0.5.1)(pg@8.11.3)
   next:
     specifier: ^14.0.0
     version: 14.0.3(react-dom@18.2.0)(react@18.2.0)
@@ -1672,8 +1672,8 @@ packages:
       - utf-8-validate
     dev: true
 
-  /drizzle-orm@0.28.6(@vercel/postgres@0.5.1)(pg@8.11.3):
-    resolution: {integrity: sha512-yBe+F9htrlYER7uXgDJUQsTHFoIrI5yMm5A0bg0GiZ/kY5jNXTWoEy4KQtg35cE27sw1VbgzoMWHAgCckUUUww==}
+  /drizzle-orm@0.29.0(@vercel/postgres@0.5.1)(pg@8.11.3):
+    resolution: {integrity: sha512-AC+CuW4GezVjsZDGU9u9B4HyikudOyYVhjm6he3Xn1D6Kky7bHGKob97MMX2piO+t9b6UuajLzlii/T/lu1qwA==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
       '@cloudflare/workers-types': '>=3'
