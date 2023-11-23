@@ -7,6 +7,7 @@ import {
   SignOutButton,
   UserButton,
 } from "@clerk/nextjs";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -19,7 +20,9 @@ export default function Home() {
         <SignOutButton />
       </SignedIn>
 
-      <CrudShowcase />
+      <Suspense fallback={<div>Loading...</div>}>
+        <CrudShowcase />
+      </Suspense>
     </main>
   );
 }
