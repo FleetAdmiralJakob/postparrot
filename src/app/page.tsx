@@ -1,4 +1,3 @@
-import { CreatePost } from "~/app/_components/create-post";
 import { api } from "~/trpc/server";
 import {
   SignedIn,
@@ -8,17 +7,23 @@ import {
   UserButton,
 } from "@clerk/nextjs";
 import { Suspense } from "react";
+import { CreatePost } from "~/app/_components/create-post";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center">
-      <SignedOut>
-        <SignInButton />
-      </SignedOut>
-      <SignedIn>
-        <UserButton />
-        <SignOutButton />
-      </SignedIn>
+    <main className="flex h-screen flex-col items-center pt-10">
+      <div className="mb-8 flex flex-col items-center gap-3">
+        <CreatePost />
+        <div className="flex justify-center gap-4">
+          <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+            <SignOutButton />
+          </SignedIn>
+        </div>
+      </div>
 
       <Suspense fallback={<div>Loading...</div>}>
         <CrudShowcase />
@@ -28,17 +33,21 @@ export default function Home() {
 }
 
 async function CrudShowcase() {
-  const latestPost = await api.post.getLatest.query();
+  const latestPosts = await api.post.getLatest.query();
 
   return (
-    <div className="w-full max-w-xs">
-      {latestPost ? (
-        <p className="truncate">Your most recent post: {latestPost.content}</p>
+    <div className="flex h-full w-3/5 flex-col gap-5 overflow-y-scroll md:w-96">
+      {latestPosts ? (
+        latestPosts.map((post) => (
+          <div key={post.id} className="mb-4">
+            <h3 className="overflow-hidden text-lg font-bold">
+              {post.content}
+            </h3>
+          </div>
+        ))
       ) : (
-        <p>You have no posts yet.</p>
+        <p>There are no posts</p>
       )}
-
-      <CreatePost />
     </div>
   );
 }

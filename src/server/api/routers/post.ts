@@ -5,7 +5,7 @@ import { posts } from "~/server/db/schema";
 
 export const postRouter = createTRPCRouter({
   create: publicProcedure
-    .input(z.object({ content: z.string().min(1) }))
+    .input(z.object({ content: z.string().min(1).max(300) }))
     .mutation(async ({ ctx, input }) => {
       if (!ctx.userId) throw new Error("Not logged in");
 
@@ -16,8 +16,9 @@ export const postRouter = createTRPCRouter({
     }),
 
   getLatest: publicProcedure.query(({ ctx }) => {
-    return ctx.db.query.posts.findFirst({
+    return ctx.db.query.posts.findMany({
       orderBy: (posts, { desc }) => [desc(posts.createdAt)],
+      limit: 100,
     });
   }),
 });
