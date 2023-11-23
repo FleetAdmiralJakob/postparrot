@@ -1,5 +1,6 @@
 import { api } from "~/trpc/server";
 import {
+  clerkClient,
   SignedIn,
   SignedOut,
   SignInButton,
@@ -8,6 +9,7 @@ import {
 } from "@clerk/nextjs";
 import { Suspense } from "react";
 import { CreatePost } from "~/app/_components/create-post";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -33,21 +35,44 @@ export default function Home() {
 }
 
 async function CrudShowcase() {
-  const latestPosts = await api.post.getLatest.query();
+  const latestPostsFromAPI = await api.post.getLatest.query();
+
+  interface Post {
+    imageUrl: string;
+    id: number;
+    content: string | null;
+    createdAt: Date;
+    updatedAt: Date | null;
+    userId: string;
+  }
+
+  const posts: Post[] = await Promise.all(
+    latestPostsFromAPI.map(async (post) => {
+      const userData = await clerkClient.users.getUser(post.userId);
+      const imageUrl: string = userData.imageUrl;
+      return {
+        ...post,
+        imageUrl,
+      };
+    }),
+  );
 
   return (
-    <div className="flex h-full w-3/5 flex-col gap-5 overflow-y-scroll md:w-96">
-      {latestPosts ? (
-        latestPosts.map((post) => (
-          <div key={post.id} className="mb-4">
-            <h3 className="overflow-hidden text-lg font-bold">
-              {post.content}
-            </h3>
+    <div className="flex h-full w-3/5 flex-col gap-3 overflow-y-scroll md:w-96">
+      {posts.map((post) => {
+        return (
+          <div key={post.id} className="mb-4 flex items-center gap-4">
+            <Image
+              src={post.imageUrl}
+              alt="user"
+              width={50}
+              height={50}
+              className="rounded-full"
+            />
+            <p className="overflow-hidden font-bold">{post.content}</p>
           </div>
-        ))
-      ) : (
-        <p>There are no posts</p>
-      )}
+        );
+      })}
     </div>
   );
 }
