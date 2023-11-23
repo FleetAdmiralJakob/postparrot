@@ -25,14 +25,13 @@ export function CreatePost() {
         e.preventDefault();
         createPost.mutate({ content });
       }}
-      className="flex flex-col gap-2"
+      className="flex w-11/12 flex-col gap-2 md:w-96"
     >
-      <input
-        type="text"
+      <textarea
         placeholder="Title"
         value={content}
         onChange={(e) => setContent(e.target.value)}
-        className="w-full rounded-full px-4 py-2 text-black"
+        className="h-24 w-full resize-none rounded-3xl px-4 py-2 text-black"
       />
       {!isSignedIn && (
         <p className="text-sm text-gray-500">You must be logged in to post.</p>

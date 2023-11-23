@@ -58,7 +58,7 @@ async function CrudShowcase() {
   );
 
   return (
-    <div className="flex h-full w-3/5 flex-col gap-3 overflow-y-scroll md:w-96">
+    <div className="flex h-full w-3/5 flex-col gap-3 overflow-y-scroll md:w-2/5">
       {posts.map((post) => {
         return (
           <div key={post.id} className="mb-4 flex items-center gap-4">
