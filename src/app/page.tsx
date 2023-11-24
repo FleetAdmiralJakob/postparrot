@@ -11,6 +11,8 @@ import { Suspense } from "react";
 import { CreatePost } from "~/app/_components/create-post";
 import Image from "next/image";
 
+export const runtime = "edge";
+
 export default function Home() {
   return (
     <main className="flex h-screen flex-col items-center pt-10">
