@@ -5,7 +5,7 @@ export const runtime = "edge";
 const SignInPage = () => {
   return (
     <div className="flex h-screen items-center justify-center">
-      <SignIn />
+      <SignIn signUpUrl="/sign-up" />
     </div>
   );
 };
