@@ -2,7 +2,7 @@ import { SignUp } from "@clerk/nextjs";
 
 export const runtime = "edge";
 
-const SignInPage = () => {
+const SignUpPage = () => {
   return (
     <div className="flex h-screen items-center justify-center">
       <SignUp signInUrl="/sign-in" />
@@ -10,4 +10,4 @@ const SignInPage = () => {
   );
 };
 
-export default SignInPage;
+export default SignUpPage;
