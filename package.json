@@ -22,6 +22,7 @@
     "@trpc/react-query": "^10.44.0",
     "@trpc/server": "^10.44.0",
     "@vercel/postgres": "^0.5.1",
+    "dayjs": "^1.11.10",
     "drizzle-orm": "^0.29.0",
     "next": "^14.0.0",
     "react": "18.2.0",

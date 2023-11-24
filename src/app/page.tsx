@@ -10,6 +10,11 @@ import {
 import { Suspense } from "react";
 import { CreatePost } from "~/app/_components/create-post";
 import Image from "next/image";
+import dayjs from "dayjs";
+
+import relativeTime from "dayjs/plugin/relativeTime";
+
+dayjs.extend(relativeTime);
 
 export const runtime = "edge";
 
@@ -30,13 +35,13 @@ export default function Home() {
       </div>
 
       <Suspense fallback={<div>Loading...</div>}>
-        <CrudShowcase />
+        <PostFeed />
       </Suspense>
     </main>
   );
 }
 
-async function CrudShowcase() {
+async function PostFeed() {
   const latestPostsFromAPI = await api.post.getLatest.query();
 
   interface Post {
@@ -46,15 +51,20 @@ async function CrudShowcase() {
     createdAt: Date;
     updatedAt: Date | null;
     userId: string;
+    username: string;
   }
 
   const posts: Post[] = await Promise.all(
     latestPostsFromAPI.map(async (post) => {
       const userData = await clerkClient.users.getUser(post.userId);
       const imageUrl: string = userData.imageUrl;
+      const username: string = userData.username
+        ? "@" + userData.username.toLowerCase()
+        : "Anonymous";
       return {
         ...post,
         imageUrl,
+        username,
       };
     }),
   );
@@ -71,7 +81,12 @@ async function CrudShowcase() {
               height={50}
               className="rounded-full"
             />
-            <p className="overflow-hidden font-bold">{post.content}</p>
+            <div>
+              <p className="text-sm font-bold text-gray-500">
+                {post.username} · {dayjs(post.createdAt).fromNow()}
+              </p>
+              <p className="overflow-hidden font-bold">{post.content}</p>
+            </div>
           </div>
         );
       })}
