@@ -22,6 +22,20 @@
       "when": 1700761440493,
       "tag": "0002_legal_shard",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1700996718980,
+      "tag": "0003_organic_wallow",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1700996886119,
+      "tag": "0004_adorable_big_bertha",
+      "breakpoints": true
     }
   ]
 }

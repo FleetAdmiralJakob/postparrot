@@ -5,8 +5,8 @@ import { sql } from "drizzle-orm";
 import {
   index,
   pgTableCreator,
-  serial,
   timestamp,
+  uuid,
   varchar,
 } from "drizzle-orm/pg-core";
 
@@ -16,12 +16,12 @@ import {
  *
  * @see https://orm.drizzle.team/docs/goodies#multi-project-schema
  */
-export const pgTable = pgTableCreator((name) => `new-twitter-clone_${name}`);
+export const pgTable = pgTableCreator((name) => `postparrot_${name}`);
 
 export const posts = pgTable(
   "post",
   {
-    id: serial("id").primaryKey(),
+    id: uuid("id").defaultRandom().primaryKey(),
     content: varchar("content", { length: 256 }),
     createdAt: timestamp("created_at")
       .default(sql`CURRENT_TIMESTAMP`)
