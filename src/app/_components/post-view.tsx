@@ -13,6 +13,17 @@ export interface Posts extends InferSelectModel<typeof posts> {
   username: string;
 }
 
+function replaceNewlineWithBrTag(text: string) {
+  return (text || "").split("\n").map((item, key) => {
+    return (
+      <span key={key}>
+        {item}
+        <br />
+      </span>
+    );
+  });
+}
+
 const PostView = ({ posts }: { posts: Posts[] }) => {
   if (posts.length === 0) {
     return <div>No posts yet</div>;
@@ -35,7 +46,9 @@ const PostView = ({ posts }: { posts: Posts[] }) => {
                 <p className="text-sm font-bold text-gray-500">
                   {post.username} · {dayjs(post.createdAt).fromNow()}
                 </p>
-                <p className="font-bold">{post.content}</p>
+                <p className="font-bold">
+                  {replaceNewlineWithBrTag(post.content)}
+                </p>
               </Link>
             </div>
           </div>

@@ -22,7 +22,7 @@ export const posts = pgTable(
   "post",
   {
     id: uuid("id").defaultRandom().primaryKey(),
-    content: varchar("content", { length: 256 }),
+    content: varchar("content", { length: 256 }).notNull(),
     createdAt: timestamp("created_at")
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),
