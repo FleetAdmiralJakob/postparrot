@@ -3,7 +3,7 @@ import PostView, { type Posts } from "~/app/_components/post-view";
 import { clerkClient } from "@clerk/nextjs";
 import { Suspense } from "react";
 import Image from "next/image";
-import { Metadata } from "next";
+import { type Metadata } from "next";
 
 export const runtime = "edge";
 
