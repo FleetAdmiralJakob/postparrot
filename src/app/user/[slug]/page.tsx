@@ -54,7 +54,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <>
       <Suspense>
-        <div className="mb-4 flex w-3/5 flex-col gap-4 border-b-2 pb-2 text-left md:w-2/5">
+        <div className="mb-5 flex w-3/5 flex-col gap-4 border-b-2 pb-3 text-left md:w-2/5">
           <div
             className={`relative bg-${getColorFromUserId(
               userData.id,
@@ -73,7 +73,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             />
           </div>
           <div className="h-5" />
-          <h1 className="text-2xl">{`@${userData.username}`}</h1>
+          <h1 className="text-2xl font-semibold">{`@${userData.username}`}</h1>
         </div>
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
