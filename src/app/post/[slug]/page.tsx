@@ -3,6 +3,8 @@ import PostView, { type Posts } from "~/app/_components/post-view";
 import { clerkClient } from "@clerk/nextjs";
 import { Suspense } from "react";
 
+export const runtime = "edge";
+
 export default function Page({ params }: { params: { slug: string } }) {
   return (
     <Suspense fallback={<div>Loading...</div>}>
