@@ -16,7 +16,7 @@ export const runtime = "edge";
 export default function Home() {
   return (
     <>
-      <div className="mb-8 flex flex-col items-center gap-3">
+      <div className="mb-8 flex flex-col items-center gap-3 pt-10">
         <CreatePost />
         <div className="flex justify-center gap-4">
           <SignedOut>

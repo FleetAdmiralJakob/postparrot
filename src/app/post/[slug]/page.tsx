@@ -8,13 +8,15 @@ export const runtime = "edge";
 export default function Page({ params }: { params: { slug: string } }) {
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <Post id={params.slug} />
+      <div className="flex w-full justify-center pt-10">
+        <Post id={params.slug} />
+      </div>
     </Suspense>
   );
 }
 
 async function Post({ id }: { id: string }) {
-  const latestPostFromAPI = await api.post.getPost.query(id);
+  const latestPostFromAPI = await api.post.getPostByPostId.query(id);
 
   const posts: Posts[] = await Promise.all(
     latestPostFromAPI.map(async (post) => {

@@ -7,6 +7,8 @@ import { TRPCReactProvider } from "~/trpc/react";
 import React from "react";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
+import { Github } from "lucide-react";
+import Link from "next/link";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -14,7 +16,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Post Parrot",
+  title: "PostParrot",
   description: "A social media platform",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
@@ -35,8 +37,14 @@ export default function RootLayout({
           className={`font-sans ${inter.variable} w-full bg-black text-white`}
         >
           <TRPCReactProvider cookies={cookies().toString()}>
-            <main className="flex h-screen flex-col items-center pt-10">
+            <main className="flex h-screen flex-col items-center">
               {children}
+              <Link
+                href="https://github.com/FleetAdmiralJakob/postparrot"
+                className="absolute bottom-5 left-5"
+              >
+                <Github size={42} />
+              </Link>
             </main>
           </TRPCReactProvider>
         </body>

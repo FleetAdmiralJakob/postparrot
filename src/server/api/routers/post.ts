@@ -2,7 +2,7 @@ import { z } from "zod";
 
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 import { posts } from "~/server/db/schema";
-import { eq } from "drizzle-orm";
+import { desc, eq } from "drizzle-orm";
 
 export const postRouter = createTRPCRouter({
   create: publicProcedure
@@ -22,7 +22,17 @@ export const postRouter = createTRPCRouter({
       limit: 100,
     });
   }),
-  getPost: publicProcedure.input(z.string()).query(({ ctx, input }) => {
+  getPostByPostId: publicProcedure.input(z.string()).query(({ ctx, input }) => {
     return ctx.db.select().from(posts).where(eq(posts.id, input));
   }),
+  getPostsByUserId: publicProcedure
+    .input(z.string())
+    .query(({ ctx, input }) => {
+      return ctx.db
+        .select()
+        .from(posts)
+        .where(eq(posts.userId, input))
+        .orderBy(desc(posts.createdAt))
+        .limit(100);
+    }),
 });

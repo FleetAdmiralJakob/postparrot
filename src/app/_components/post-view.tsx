@@ -34,13 +34,15 @@ const PostView = ({ posts }: { posts: Posts[] }) => {
       {posts.map((post) => {
         return (
           <div key={post.id} className="mb-4 flex items-center gap-4">
-            <Image
-              src={post.imageUrl}
-              alt="user"
-              width={50}
-              height={50}
-              className="rounded-full"
-            />
+            <Link href={`/user/${post.userId}`}>
+              <Image
+                src={post.imageUrl}
+                alt={post.username + "'s profile picture"}
+                width={50}
+                height={50}
+                className="rounded-full"
+              />
+            </Link>
             <div>
               <Link href={`/post/${post.id}`}>
                 <p className="text-sm font-bold text-gray-500">
