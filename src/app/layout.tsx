@@ -9,6 +9,8 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import { Github } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import icon from "~/assets/icon.png";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -38,6 +40,20 @@ export default function RootLayout({
         >
           <TRPCReactProvider cookies={cookies().toString()}>
             <main className="flex h-screen flex-col items-center">
+              <Link
+                href="/"
+                className="absolute left-5 top-5 flex flex-col items-center"
+              >
+                <div className="flex aspect-square h-14 flex-col items-center md:h-20">
+                  <Image
+                    src={icon}
+                    width={70}
+                    height={70}
+                    alt="Link to the homepage"
+                  />
+                </div>
+                <h1 className="pt-0.5 text-base md:text-xl">PostParrot</h1>
+              </Link>
               {children}
               <Link
                 href="https://github.com/FleetAdmiralJakob/postparrot"
