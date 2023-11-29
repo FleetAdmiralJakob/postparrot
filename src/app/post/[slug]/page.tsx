@@ -18,20 +18,17 @@ export default function Page({ params }: { params: { slug: string } }) {
 async function Post({ id }: { id: string }) {
   const latestPostFromAPI = await api.post.getPostByPostId.query(id);
 
-  const posts: Posts[] = await Promise.all(
-    latestPostFromAPI.map(async (post) => {
-      const userData = await clerkClient.users.getUser(post.userId);
-      const imageUrl: string = userData.imageUrl;
-      const username: string = userData.username
+  const userData = await clerkClient.users.getUser(latestPostFromAPI.userId);
+
+  const posts: Posts[] = [
+    {
+      ...latestPostFromAPI,
+      imageUrl: userData.imageUrl,
+      username: userData.username
         ? "@" + userData.username.toLowerCase()
-        : "Anonymous";
-      return {
-        ...post,
-        imageUrl,
-        username,
-      };
-    }),
-  );
+        : "Anonymous",
+    },
+  ];
 
   return <PostView posts={posts} />;
 }

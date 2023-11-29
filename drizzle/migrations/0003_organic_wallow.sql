@@ -1,1 +1,0 @@
-ALTER TABLE "new-twitter-clone_post" ALTER COLUMN "id" SET DATA TYPE uuid;

@@ -32,6 +32,9 @@ dependencies:
   '@vercel/postgres':
     specifier: ^0.5.1
     version: 0.5.1
+  classnames:
+    specifier: ^2.3.2
+    version: 2.3.2
   dayjs:
     specifier: ^1.11.10
     version: 1.11.10
@@ -1904,6 +1907,10 @@ packages:
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
+
+  /classnames@2.3.2:
+    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
+    dev: false
 
   /cli-color@2.0.3:
     resolution: {integrity: sha512-OkoZnxyC4ERN3zLzZaY9Emb7f/MhBOIpePv0Ycok0fJYT+Ouo00UBEIwsVsr0yoow++n5YWlSUgST9GKhNHiRQ==}

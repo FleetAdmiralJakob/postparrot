@@ -1,24 +1,69 @@
 {
+  "id": "7f7e06d3-52a1-412c-acfe-29ea2313b04d",
+  "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "5",
   "dialect": "pg",
-  "id": "8ebf3f73-98f7-4b06-97bb-2ef923bc05b3",
-  "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
-    "new-twitter-clone_post": {
-      "name": "new-twitter-clone_post",
+    "postparrot_heart": {
+      "name": "postparrot_heart",
       "schema": "",
       "columns": {
         "id": {
           "name": "id",
-          "type": "serial",
+          "type": "uuid",
           "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "post_id": {
+          "name": "post_id",
+          "type": "uuid",
+          "primaryKey": false,
           "notNull": true
         },
-        "name": {
-          "name": "name",
-          "type": "varchar(256)",
+        "user_id": {
+          "name": "user_id",
+          "type": "varchar",
           "primaryKey": false,
-          "notNull": false
+          "notNull": true
+        }
+      },
+      "indexes": {
+        "post_id_idx": {
+          "name": "post_id_idx",
+          "columns": [
+            "post_id"
+          ],
+          "isUnique": false
+        },
+        "user_id_idx": {
+          "name": "user_id_idx",
+          "columns": [
+            "user_id"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "postparrot_post": {
+      "name": "postparrot_post",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "content": {
+          "name": "content",
+          "type": "varchar(300)",
+          "primaryKey": false,
+          "notNull": true
         },
         "created_at": {
           "name": "created_at",
@@ -27,19 +72,32 @@
           "notNull": true,
           "default": "CURRENT_TIMESTAMP"
         },
-        "updatedAt": {
-          "name": "updatedAt",
+        "updated_at": {
+          "name": "updated_at",
           "type": "timestamp",
           "primaryKey": false,
           "notNull": false,
           "default": "CURRENT_TIMESTAMP"
+        },
+        "user_id": {
+          "name": "user_id",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
         }
       },
       "indexes": {
         "name_idx": {
           "name": "name_idx",
           "columns": [
-            "name"
+            "content"
+          ],
+          "isUnique": false
+        },
+        "user_id_idx": {
+          "name": "user_id_idx",
+          "columns": [
+            "user_id"
           ],
           "isUnique": false
         }

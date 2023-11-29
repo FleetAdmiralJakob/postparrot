@@ -1,0 +1,1 @@
+ALTER TABLE "postparrot_heart" ADD CONSTRAINT "postparrot_heart_user_id_unique" UNIQUE("user_id");

@@ -1,24 +1,69 @@
 {
+  "id": "6459af7f-f1fb-44ba-945a-b0e7332a9b9a",
+  "prevId": "7f7e06d3-52a1-412c-acfe-29ea2313b04d",
   "version": "5",
   "dialect": "pg",
-  "id": "9e5a6be0-82c9-4212-b139-6b79784d5692",
-  "prevId": "8ebf3f73-98f7-4b06-97bb-2ef923bc05b3",
   "tables": {
-    "new-twitter-clone_post": {
-      "name": "new-twitter-clone_post",
+    "postparrott_heart": {
+      "name": "postparrott_heart",
       "schema": "",
       "columns": {
         "id": {
           "name": "id",
-          "type": "serial",
+          "type": "uuid",
           "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "post_id": {
+          "name": "post_id",
+          "type": "uuid",
+          "primaryKey": false,
           "notNull": true
+        },
+        "user_id": {
+          "name": "user_id",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {
+        "post_id_idx": {
+          "name": "post_id_idx",
+          "columns": [
+            "post_id"
+          ],
+          "isUnique": false
+        },
+        "user_id_idx": {
+          "name": "user_id_idx",
+          "columns": [
+            "user_id"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "postparrott_post": {
+      "name": "postparrott_post",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
         },
         "content": {
           "name": "content",
-          "type": "varchar(256)",
+          "type": "varchar(300)",
           "primaryKey": false,
-          "notNull": false
+          "notNull": true
         },
         "created_at": {
           "name": "created_at",
@@ -27,12 +72,18 @@
           "notNull": true,
           "default": "CURRENT_TIMESTAMP"
         },
-        "updatedAt": {
-          "name": "updatedAt",
+        "updated_at": {
+          "name": "updated_at",
           "type": "timestamp",
           "primaryKey": false,
           "notNull": false,
           "default": "CURRENT_TIMESTAMP"
+        },
+        "user_id": {
+          "name": "user_id",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
         }
       },
       "indexes": {
@@ -40,6 +91,13 @@
           "name": "name_idx",
           "columns": [
             "content"
+          ],
+          "isUnique": false
+        },
+        "user_id_idx": {
+          "name": "user_id_idx",
+          "columns": [
+            "user_id"
           ],
           "isUnique": false
         }
@@ -54,8 +112,6 @@
   "_meta": {
     "schemas": {},
     "tables": {},
-    "columns": {
-      "\"new-twitter-clone_post\".\"name\"": "\"new-twitter-clone_post\".\"content\""
-    }
+    "columns": {}
   }
 }

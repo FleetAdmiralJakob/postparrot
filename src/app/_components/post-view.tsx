@@ -5,12 +5,15 @@ import { type posts } from "~/server/db/schema";
 
 import relativeTime from "dayjs/plugin/relativeTime";
 import Link from "next/link";
+import HeartComponent from "./heart";
 
 dayjs.extend(relativeTime);
 
 export interface Posts extends InferSelectModel<typeof posts> {
   imageUrl: string;
   username: string;
+  hearts: number;
+  heartedByMe: boolean;
 }
 
 function replaceNewlineWithBrTag(text: string) {
@@ -44,14 +47,21 @@ const PostView = ({ posts }: { posts: Posts[] }) => {
               />
             </Link>
             <div>
-              <Link href={`/post/${post.id}`}>
-                <p className="text-sm font-bold text-gray-500">
-                  {post.username} · {dayjs(post.createdAt).fromNow()}
-                </p>
-                <p className="font-bold">
-                  {replaceNewlineWithBrTag(post.content)}
-                </p>
-              </Link>
+              <div className="flex flex-col gap-2">
+                <Link href={`/post/${post.id}`}>
+                  <p className="pb-1 text-sm font-bold text-gray-500">
+                    {post.username} · {dayjs(post.createdAt).fromNow()}
+                  </p>
+                  <p className="font-bold">
+                    {replaceNewlineWithBrTag(post.content)}
+                  </p>
+                </Link>
+                <HeartComponent
+                  hearts={post.hearts}
+                  heartedByMe={post.heartedByMe}
+                  postId={post.id}
+                />
+              </div>
             </div>
           </div>
         );

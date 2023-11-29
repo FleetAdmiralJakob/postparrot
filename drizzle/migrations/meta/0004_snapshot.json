@@ -1,11 +1,55 @@
 {
-  "id": "8dca84c2-47af-4a2d-a614-514d7804b09c",
-  "prevId": "0323a90c-5122-43ae-86b8-00bb32e4375c",
+  "id": "d6357b1f-b0d8-4f53-a5b0-29513bc5afff",
+  "prevId": "9d90ed3b-dbc6-4557-b363-1f5ef3a5c725",
   "version": "5",
   "dialect": "pg",
   "tables": {
-    "new-twitter-clone_post": {
-      "name": "new-twitter-clone_post",
+    "postparrot_heart": {
+      "name": "postparrot_heart",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "post_id": {
+          "name": "post_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "user_id": {
+          "name": "user_id",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {
+        "post_id_idx": {
+          "name": "post_id_idx",
+          "columns": [
+            "post_id"
+          ],
+          "isUnique": false
+        },
+        "user_id_idx": {
+          "name": "user_id_idx",
+          "columns": [
+            "user_id"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "postparrot_post": {
+      "name": "postparrot_post",
       "schema": "",
       "columns": {
         "id": {
@@ -17,9 +61,9 @@
         },
         "content": {
           "name": "content",
-          "type": "varchar(256)",
+          "type": "varchar(300)",
           "primaryKey": false,
-          "notNull": false
+          "notNull": true
         },
         "created_at": {
           "name": "created_at",
@@ -28,8 +72,8 @@
           "notNull": true,
           "default": "CURRENT_TIMESTAMP"
         },
-        "updatedAt": {
-          "name": "updatedAt",
+        "updated_at": {
+          "name": "updated_at",
           "type": "timestamp",
           "primaryKey": false,
           "notNull": false,
@@ -47,6 +91,13 @@
           "name": "name_idx",
           "columns": [
             "content"
+          ],
+          "isUnique": false
+        },
+        "user_id_idx": {
+          "name": "user_id_idx",
+          "columns": [
+            "user_id"
           ],
           "isUnique": false
         }

@@ -1,24 +1,77 @@
 {
-  "id": "0323a90c-5122-43ae-86b8-00bb32e4375c",
-  "prevId": "b9d3011c-059b-4b24-81ac-737a2c2f0f4d",
+  "id": "9d90ed3b-dbc6-4557-b363-1f5ef3a5c725",
+  "prevId": "7da5fa5d-7ed6-4682-b214-3276a9f7373f",
   "version": "5",
   "dialect": "pg",
   "tables": {
-    "new-twitter-clone_post": {
-      "name": "new-twitter-clone_post",
+    "postparrot_heart": {
+      "name": "postparrot_heart",
       "schema": "",
       "columns": {
         "id": {
           "name": "id",
           "type": "uuid",
           "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "post_id": {
+          "name": "post_id",
+          "type": "uuid",
+          "primaryKey": false,
           "notNull": true
+        },
+        "user_id": {
+          "name": "user_id",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {
+        "post_id_idx": {
+          "name": "post_id_idx",
+          "columns": [
+            "post_id"
+          ],
+          "isUnique": false
+        },
+        "user_id_idx": {
+          "name": "user_id_idx",
+          "columns": [
+            "user_id"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "postparrot_heart_user_id_unique": {
+          "name": "postparrot_heart_user_id_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "user_id"
+          ]
+        }
+      }
+    },
+    "postparrot_post": {
+      "name": "postparrot_post",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
         },
         "content": {
           "name": "content",
-          "type": "varchar(256)",
+          "type": "varchar(300)",
           "primaryKey": false,
-          "notNull": false
+          "notNull": true
         },
         "created_at": {
           "name": "created_at",
@@ -27,8 +80,8 @@
           "notNull": true,
           "default": "CURRENT_TIMESTAMP"
         },
-        "updatedAt": {
-          "name": "updatedAt",
+        "updated_at": {
+          "name": "updated_at",
           "type": "timestamp",
           "primaryKey": false,
           "notNull": false,
@@ -46,6 +99,13 @@
           "name": "name_idx",
           "columns": [
             "content"
+          ],
+          "isUnique": false
+        },
+        "user_id_idx": {
+          "name": "user_id_idx",
+          "columns": [
+            "user_id"
           ],
           "isUnique": false
         }

@@ -1,0 +1,1 @@
+ALTER TABLE "postparrot_heart" DROP CONSTRAINT "postparrot_heart_user_id_unique";
