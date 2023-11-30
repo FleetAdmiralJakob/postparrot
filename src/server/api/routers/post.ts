@@ -10,6 +10,8 @@ export const postRouter = createTRPCRouter({
     .mutation(async ({ ctx, input }) => {
       if (!ctx.userId) throw new Error("Not logged in");
 
+      if (input.content.trim() === "") throw new Error("Post cannot be empty");
+
       await ctx.db.insert(posts).values({
         content: input.content,
         userId: ctx.userId,
