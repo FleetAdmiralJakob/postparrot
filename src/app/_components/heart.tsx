@@ -10,14 +10,34 @@ const HeartComponent = ({
   hearts,
   heartedByMe: initialheartedByMe,
   postId,
-}: {
-  hearts: number;
-  heartedByMe: boolean;
-  postId: string;
-}) => {
+  commentId,
+}:
+  | {
+      hearts: number;
+      heartedByMe: boolean;
+      postId: string;
+      commentId?: undefined;
+    }
+  | {
+      hearts: number;
+      heartedByMe: boolean;
+      commentId: string;
+      postId?: undefined;
+    }) => {
   const router = useRouter();
 
-  const heart = api.post.heartPostByPostId.useMutation({
+  const heartPost = api.post.heartPostByPostId.useMutation({
+    onSuccess: () => {
+      router.refresh();
+    },
+    onError: () => {
+      // Reset to original state in case of api call failure
+      setLocalHearts(hearts);
+      setHeartsByMe(initialheartedByMe);
+    },
+  });
+
+  const heartComment = api.post.heartCommentByCommentId.useMutation({
     onSuccess: () => {
       router.refresh();
     },
@@ -45,9 +65,13 @@ const HeartComponent = ({
           setLocalHearts(heartedByMe ? localHearts - 1 : localHearts + 1);
           setHeartsByMe(!heartedByMe);
 
-          heart.mutate(postId);
+          if (postId) {
+            heartPost.mutate(postId);
+          } else if (commentId) {
+            heartComment.mutate(commentId);
+          }
         }}
-        disabled={heart.isLoading}
+        disabled={heartPost.isLoading}
       >
         <Heart
           className={cn(

@@ -33,6 +33,7 @@ export const posts = pgTable(
 
 export const postsRelations = relations(posts, ({ many }) => ({
   hearts: many(hearts),
+  comments: many(comments),
 }));
 
 export const hearts = pgTable(
@@ -52,5 +53,51 @@ export const heartsRelations = relations(hearts, ({ one }) => ({
   post: one(posts, {
     fields: [hearts.postId],
     references: [posts.id],
+  }),
+}));
+
+export const comments = pgTable(
+  "comment",
+  {
+    id: uuid("id").defaultRandom().primaryKey(),
+    content: varchar("content", { length: 300 }).notNull(),
+    createdAt: timestamp("created_at")
+      .default(sql`CURRENT_TIMESTAMP`)
+      .notNull(),
+    updatedAt: timestamp("updated_at").default(sql`CURRENT_TIMESTAMP`),
+    postId: uuid("post_id").notNull(),
+    userId: varchar("user_id").notNull(),
+  },
+  (example) => ({
+    postIdIndex: index("post_id_idx").on(example.postId),
+    userIdIndex: index("user_id_idx").on(example.userId),
+  }),
+);
+
+export const commentsRelations = relations(comments, ({ one, many }) => ({
+  post: one(posts, {
+    fields: [comments.postId],
+    references: [posts.id],
+  }),
+  commentHearts: many(commentHearts),
+}));
+
+export const commentHearts = pgTable(
+  "comment_heart",
+  {
+    id: uuid("id").defaultRandom().primaryKey(),
+    commentId: uuid("comment_id").notNull(),
+    userId: varchar("user_id").notNull(),
+  },
+  (example) => ({
+    commentIdIndex: index("comment_id_idx").on(example.commentId),
+    userIdIndex: index("user_id_idx").on(example.userId),
+  }),
+);
+
+export const commentHeartsRelations = relations(commentHearts, ({ one }) => ({
+  comment: one(comments, {
+    fields: [commentHearts.commentId],
+    references: [comments.id],
   }),
 }));

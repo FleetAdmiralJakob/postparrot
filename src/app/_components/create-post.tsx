@@ -5,12 +5,26 @@ import { useState } from "react";
 
 import { api } from "~/trpc/react";
 import { useAuth } from "@clerk/nextjs";
+import { cn } from "~/lib/utils";
 
-export function CreatePost() {
+export function CreatePost({
+  comment,
+  className,
+}: {
+  comment?: { postId: string };
+  className?: string;
+}) {
   const router = useRouter();
   const [content, setContent] = useState("");
 
   const createPost = api.post.create.useMutation({
+    onSuccess: () => {
+      router.refresh();
+      setContent("");
+    },
+  });
+
+  const createComment = api.post.createComment.useMutation({
     onSuccess: () => {
       router.refresh();
       setContent("");
@@ -23,9 +37,15 @@ export function CreatePost() {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        createPost.mutate({ content });
+        if (!isSignedIn) return;
+
+        if (!comment) {
+          createPost.mutate({ content });
+        } else {
+          createComment.mutate({ content, postId: comment.postId });
+        }
       }}
-      className="flex w-11/12 flex-col gap-2 md:w-96"
+      className={cn("flex w-8/12 flex-col gap-2 md:max-w-lg", className)}
     >
       <textarea
         placeholder="Title"
@@ -39,9 +59,19 @@ export function CreatePost() {
       <button
         type="submit"
         className="rounded-full bg-white/10 px-10 py-3 font-semibold transition hover:bg-white/20"
-        disabled={createPost.isLoading || !isSignedIn}
+        disabled={
+          !comment
+            ? createPost.isLoading || !isSignedIn
+            : createComment.isLoading || !isSignedIn
+        }
       >
-        {createPost.isLoading ? "Submitting..." : "Submit"}
+        {!comment
+          ? createPost.isLoading
+            ? "Submitting..."
+            : "Submit"
+          : createComment.isLoading
+            ? "Submitting..."
+            : "Submit"}
       </button>
     </form>
   );

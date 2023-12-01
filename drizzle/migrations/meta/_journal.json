@@ -36,6 +36,20 @@
       "when": 1701201959529,
       "tag": "0004_dark_miek",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1701359298048,
+      "tag": "0005_fine_killer_shrike",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1701359804228,
+      "tag": "0006_clear_moonstone",
+      "breakpoints": true
     }
   ]
 }

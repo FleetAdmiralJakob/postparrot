@@ -1,5 +1,5 @@
 import { api } from "~/trpc/server";
-import PostView, { type Posts } from "~/app/_components/post-view";
+import PostView, { type Post } from "~/app/_components/post-view";
 import { clerkClient } from "@clerk/nextjs";
 import { Suspense } from "react";
 import Image from "next/image";
@@ -86,17 +86,40 @@ export default async function Page({ params }: { params: { slug: string } }) {
 async function Posts({ id }: { id: string }) {
   const latestPostsFromAPI = await api.post.getPostsByUserId.query(id);
 
-  const posts: Posts[] = await Promise.all(
+  const posts: Post[] = await Promise.all(
     latestPostsFromAPI.map(async (post) => {
       const userData = await clerkClient.users.getUser(post.userId);
       const imageUrl: string = userData.imageUrl;
       const username: string = userData.username
         ? "@" + userData.username.toLowerCase()
         : "Anonymous";
+
+      if (!post.mostHeartedComment)
+        return {
+          ...post,
+          imageUrl,
+          username,
+          mostHeartedComment: undefined,
+        };
+      const mostHeartedCommentUserData = await clerkClient.users.getUser(
+        post.mostHeartedComment.userId,
+      );
+      const mostHeartedCommentImageUrl: string =
+        mostHeartedCommentUserData.imageUrl;
+
+      const mostHeartedCommentUsername: string =
+        mostHeartedCommentUserData.username
+          ? "@" + mostHeartedCommentUserData.username.toLowerCase()
+          : "Anonymous";
       return {
         ...post,
         imageUrl,
         username,
+        mostHeartedComment: {
+          ...post.mostHeartedComment,
+          imageUrl: mostHeartedCommentImageUrl,
+          username: mostHeartedCommentUsername,
+        },
       };
     }),
   );
