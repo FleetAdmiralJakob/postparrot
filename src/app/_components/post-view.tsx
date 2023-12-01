@@ -98,7 +98,7 @@ const PostView = ({
                       heartedByMe={post.heartedByMe}
                       postId={post.id}
                     />
-                    <div className="flex">
+                    <div className="flex items-center gap-1">
                       <MessageCircle />
                       {post.commentAmount}
                     </div>
