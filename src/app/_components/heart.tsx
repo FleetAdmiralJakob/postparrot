@@ -49,7 +49,13 @@ const HeartComponent = ({
         }}
         disabled={heart.isLoading}
       >
-        <Heart className={cn(heartedByMe ? "fill-red-500 text-red-500" : "")} />
+        <Heart
+          className={cn(
+            heartedByMe
+              ? "fill-red-500 text-red-500 transition-all duration-200 ease-in-out hover:fill-transparent"
+              : "fill-transparent transition-all duration-200 ease-in-out hover:fill-red-500",
+          )}
+        />
       </button>
       {localHearts}
     </div>
