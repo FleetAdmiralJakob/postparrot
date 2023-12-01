@@ -42,9 +42,9 @@ export default function RootLayout({
             <main className="flex h-screen flex-col items-center">
               <Link
                 href="/"
-                className="absolute left-5 top-5 flex flex-col items-center"
+                className="absolute left-3 top-3 flex flex-col items-center sm:left-5 sm:top-5"
               >
-                <div className="flex aspect-square h-14 flex-col items-center md:h-20">
+                <div className="flex aspect-square h-10 flex-col items-center sm:h-14 md:h-20">
                   <Image
                     src={icon}
                     width={70}
@@ -52,7 +52,9 @@ export default function RootLayout({
                     alt="Link to the homepage"
                   />
                 </div>
-                <h1 className="pt-0.5 text-base md:text-xl">PostParrot</h1>
+                <h1 className="pt-0.5 text-sm sm:text-base md:text-xl">
+                  PostParrot
+                </h1>
               </Link>
               {children}
               <Link
