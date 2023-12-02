@@ -11,6 +11,7 @@ import { Github } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import icon from "~/assets/icon.png";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -65,6 +66,7 @@ export default function RootLayout({
               </Link>
             </main>
           </TRPCReactProvider>
+          <Analytics />
         </body>
       </html>
     </ClerkProvider>
