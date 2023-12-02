@@ -4,6 +4,7 @@ import { clerkClient } from "@clerk/nextjs";
 import { Suspense } from "react";
 import Image from "next/image";
 import { type Metadata } from "next";
+import { assemblePost, fetchAndFormatUser } from "~/lib/postActions";
 
 export const runtime = "edge";
 
@@ -88,39 +89,15 @@ async function Posts({ id }: { id: string }) {
 
   const posts: Post[] = await Promise.all(
     latestPostsFromAPI.map(async (post) => {
-      const userData = await clerkClient.users.getUser(post.userId);
-      const imageUrl: string = userData.imageUrl;
-      const username: string = userData.username
-        ? "@" + userData.username.toLowerCase()
-        : "Anonymous";
+      const userData = await fetchAndFormatUser(post.userId);
+      let mostHeartedCommentUserData = undefined;
 
-      if (!post.mostHeartedComment)
-        return {
-          ...post,
-          imageUrl,
-          username,
-          mostHeartedComment: undefined,
-        };
-      const mostHeartedCommentUserData = await clerkClient.users.getUser(
-        post.mostHeartedComment.userId,
-      );
-      const mostHeartedCommentImageUrl: string =
-        mostHeartedCommentUserData.imageUrl;
+      if (post.mostHeartedComment)
+        mostHeartedCommentUserData = await fetchAndFormatUser(
+          post.mostHeartedComment.userId,
+        );
 
-      const mostHeartedCommentUsername: string =
-        mostHeartedCommentUserData.username
-          ? "@" + mostHeartedCommentUserData.username.toLowerCase()
-          : "Anonymous";
-      return {
-        ...post,
-        imageUrl,
-        username,
-        mostHeartedComment: {
-          ...post.mostHeartedComment,
-          imageUrl: mostHeartedCommentImageUrl,
-          username: mostHeartedCommentUsername,
-        },
-      };
+      return assemblePost(post, userData, mostHeartedCommentUserData);
     }),
   );
 
