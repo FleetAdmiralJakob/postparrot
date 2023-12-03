@@ -48,7 +48,7 @@ export function CreatePost({
       className={cn("flex w-8/12 flex-col gap-2 md:max-w-lg", className)}
     >
       <textarea
-        placeholder="Title"
+        placeholder={comment ? "Add a comment..." : "What's on your mind?"}
         value={content}
         onChange={(e) => setContent(e.target.value)}
         className="h-24 w-full resize-none rounded-3xl px-4 py-2 text-black"
