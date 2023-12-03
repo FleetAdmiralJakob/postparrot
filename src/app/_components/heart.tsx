@@ -5,6 +5,7 @@ import { api } from "~/trpc/react";
 import { useRouter } from "next/navigation";
 import cn from "classnames";
 import { useEffect, useState } from "react";
+import { useAuth } from "@clerk/nextjs";
 
 const HeartComponent = ({
   hearts,
@@ -25,6 +26,8 @@ const HeartComponent = ({
       postId?: undefined;
     }) => {
   const router = useRouter();
+
+  const { isSignedIn } = useAuth();
 
   const heartPost = api.post.heartPostByPostId.useMutation({
     onSuccess: () => {
@@ -71,7 +74,7 @@ const HeartComponent = ({
             heartComment.mutate(commentId);
           }
         }}
-        disabled={heartPost.isLoading}
+        disabled={heartPost.isLoading || !isSignedIn}
       >
         <Heart
           className={cn(

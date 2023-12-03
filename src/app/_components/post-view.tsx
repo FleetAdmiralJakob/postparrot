@@ -106,19 +106,53 @@ const PostView = ({
                 </div>
               </div>
             </div>
+            {post.mostHeartedComment && !replies && (
+              <div className="mb-4 flex w-full items-center gap-4 pl-7">
+                <Link
+                  href={`/user/${post.mostHeartedComment.userId}`}
+                  className="relative"
+                >
+                  <Image
+                    src={post.mostHeartedComment.imageUrl}
+                    alt={
+                      post.mostHeartedComment.username + "'s profile picture"
+                    }
+                    width={50}
+                    height={50}
+                    className="rounded-full"
+                  />
+                </Link>
+                <div className="flex flex-col gap-2">
+                  <div>
+                    <p className="pb-1 text-sm font-bold text-gray-500">
+                      {post.mostHeartedComment.username} ·{" "}
+                      {dayjs(post.mostHeartedComment.createdAt).fromNow()}
+                    </p>
+                    <p className="font-bold">
+                      {replaceNewlineWithBrTag(post.mostHeartedComment.content)}
+                    </p>
+                  </div>
+                  <HeartComponent
+                    hearts={post.mostHeartedComment.hearts}
+                    heartedByMe={post.mostHeartedComment.heartedByMe}
+                    commentId={post.mostHeartedComment.id}
+                  />
+                </div>
+              </div>
+            )}
             {replies && (
               <CreatePost comment={{ postId: post.id }} className="pb-5" />
             )}
             {"comments" in post
               ? replies &&
-                post.comments.map((comment: Comment, index) => {
+                post.comments.map((comment: Comment) => {
                   return (
                     <div
                       key={comment.id}
                       className="mb-4 flex w-full items-center gap-4 pl-7"
                     >
                       <Link
-                        href={`/user/${comment.username}`}
+                        href={`/user/${comment.userId}`}
                         className="relative"
                       >
                         <Image
@@ -130,7 +164,7 @@ const PostView = ({
                         />
                       </Link>
                       <div className="flex flex-col gap-2">
-                        <Link href={`/post/${post.id}/comment/${comment.id}`}>
+                        <div>
                           <p className="pb-1 text-sm font-bold text-gray-500">
                             {comment.username} ·{" "}
                             {dayjs(comment.createdAt).fromNow()}
@@ -138,7 +172,7 @@ const PostView = ({
                           <p className="font-bold">
                             {replaceNewlineWithBrTag(comment.content)}
                           </p>
-                        </Link>
+                        </div>
                         <HeartComponent
                           hearts={comment.hearts}
                           heartedByMe={comment.heartedByMe}
