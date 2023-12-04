@@ -60,9 +60,10 @@ export default function RootLayout({
               {children}
               <Link
                 href="https://github.com/FleetAdmiralJakob/postparrot"
-                className="absolute bottom-5 left-5"
+                className="absolute bottom-5 left-4 flex items-center gap-2"
               >
                 <Github size={42} />
+                <div className="hidden md:block">Made with ❤️ by Jakob</div>
               </Link>
             </main>
           </TRPCReactProvider>
