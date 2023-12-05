@@ -82,7 +82,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             />
           </div>
           <div className="h-5" />
-          <h1 className="text-2xl font-semibold">{`@${userData.username}`}</h1>
+          <h1 className="text-2xl font-semibold">{userData.username}</h1>
         </div>
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
