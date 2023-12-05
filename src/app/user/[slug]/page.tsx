@@ -46,10 +46,10 @@ export async function generateMetadata({
 
   return {
     title: `${
-      userData.username ? "@" + userData.username : "Anonymous"
+      userData.username ? userData.username : "Anonymous"
     }'s profile - PostParrot`,
     description: `View ${
-      userData.username ? "@" + userData.username : "Anonymous"
+      userData.username ? userData.username : "Anonymous"
     }'s posts on PostParrot.`,
   };
 }
@@ -73,7 +73,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
               src={userData.imageUrl}
               alt={
                 userData.username
-                  ? "@" + userData.username.toLowerCase() + "'s profile picture"
+                  ? userData.username.toLowerCase() + "'s profile picture"
                   : "Anonymous's profile picture"
               }
               width={95}
