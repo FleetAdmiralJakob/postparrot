@@ -45,12 +45,8 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${
-      userData.username ? userData.username : "Anonymous"
-    }'s profile - PostParrot`,
-    description: `View ${
-      userData.username ? userData.username : "Anonymous"
-    }'s posts on PostParrot.`,
+    title: `${userData.username}'s profile - PostParrot`,
+    description: `View ${userData.username}'s posts on PostParrot.`,
   };
 }
 
@@ -63,7 +59,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <>
       <Suspense>
-        <div className="mb-5 flex w-3/5 flex-col gap-4 border-b-2 pb-3 text-left md:w-2/5">
+        <div className="flex w-3/5 flex-col gap-4 border-b-2 pb-3 text-left md:w-2/5">
           <div
             className={`relative bg-${getColorFromUserId(
               userData.id,
@@ -71,11 +67,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
           >
             <Image
               src={userData.imageUrl}
-              alt={
-                userData.username
-                  ? userData.username.toLowerCase() + "'s profile picture"
-                  : "Anonymous's profile picture"
-              }
+              alt={userData.username + "'s profile picture"}
               width={95}
               height={95}
               className="absolute -bottom-10 ml-6 rounded-full border-4 border-black"

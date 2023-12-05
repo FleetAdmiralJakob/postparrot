@@ -33,9 +33,7 @@ async function Post({ id }: { id: string }) {
       {
         ...latestPostFromAPI,
         imageUrl: userData.imageUrl,
-        username: userData.username
-          ? "@" + userData.username.toLowerCase()
-          : "Anonymous",
+        username: userData.username,
         mostHeartedComment: undefined,
         comments: await Promise.all(
           latestPostFromAPI.comments.map(async (comment) => {
@@ -46,9 +44,7 @@ async function Post({ id }: { id: string }) {
             return {
               ...comment,
               imageUrl: commentUserData.imageUrl,
-              username: commentUserData.username
-                ? "@" + commentUserData.username.toLowerCase()
-                : "Anonymous",
+              username: commentUserData.username,
             };
           }),
         ),
@@ -64,9 +60,7 @@ async function Post({ id }: { id: string }) {
         {
           ...latestPostFromAPI,
           imageUrl: userData.imageUrl,
-          username: userData.username
-            ? "@" + userData.username.toLowerCase()
-            : "Anonymous",
+          username: userData.username,
           mostHeartedComment: undefined,
           comments: await Promise.all(
             latestPostFromAPI.comments.map(async (comment) => {
@@ -77,9 +71,7 @@ async function Post({ id }: { id: string }) {
               return {
                 ...comment,
                 imageUrl: commentUserData.imageUrl,
-                username: commentUserData.username
-                  ? "@" + commentUserData.username.toLowerCase()
-                  : "Anonymous",
+                username: commentUserData.username,
               };
             }),
           ),
@@ -91,17 +83,13 @@ async function Post({ id }: { id: string }) {
       mostHeartedCommentUserData.imageUrl;
 
     const mostHeartedCommentUsername: string =
-      mostHeartedCommentUserData.username
-        ? "@" + mostHeartedCommentUserData.username.toLowerCase()
-        : "Anonymous";
+      mostHeartedCommentUserData.username;
 
     posts = [
       {
         ...latestPostFromAPI,
         imageUrl: userData.imageUrl,
-        username: userData.username
-          ? "@" + userData.username.toLowerCase()
-          : "Anonymous",
+        username: userData.username,
         mostHeartedComment: {
           ...latestPostFromAPI.mostHeartedComment,
           imageUrl: mostHeartedCommentImageUrl,
@@ -116,9 +104,7 @@ async function Post({ id }: { id: string }) {
             return {
               ...comment,
               imageUrl: commentUserData.imageUrl,
-              username: commentUserData.username
-                ? "@" + commentUserData.username.toLowerCase()
-                : "Anonymous",
+              username: commentUserData.username,
             };
           }),
         ),
