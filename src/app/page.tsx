@@ -16,7 +16,7 @@ export const runtime = "edge";
 export default function Home() {
   return (
     <>
-      <div className="mb-8 flex w-full flex-col items-center gap-3 pt-10">
+      <div className="mb-8 flex w-full flex-col items-center gap-3">
         <CreatePost />
         <div className="flex justify-center gap-4">
           <SignedOut>
@@ -29,7 +29,7 @@ export default function Home() {
         </div>
       </div>
 
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div className="h-full pt-4">Loading...</div>}>
         <HomePostFeed />
       </Suspense>
     </>

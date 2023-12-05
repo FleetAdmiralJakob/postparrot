@@ -12,6 +12,7 @@ import Link from "next/link";
 import Image from "next/image";
 import icon from "~/assets/icon.png";
 import { Analytics } from "@vercel/analytics/react";
+import Search from "~/app/_components/search";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -41,22 +42,20 @@ export default function RootLayout({
         >
           <TRPCReactProvider cookies={cookies().toString()}>
             <main className="flex h-screen flex-col items-center">
-              <Link
-                href="/"
-                className="absolute left-3 top-3 flex flex-col items-center sm:left-5 sm:top-5"
-              >
-                <div className="flex aspect-square h-10 flex-col items-center sm:h-14 md:h-20">
-                  <Image
-                    src={icon}
-                    width={70}
-                    height={70}
-                    alt="Link to the homepage"
-                  />
-                </div>
-                <h1 className="pt-0.5 text-sm sm:text-base md:text-xl">
-                  PostParrot
-                </h1>
-              </Link>
+              <header className="relative mb-14 mt-3 flex h-14 w-full justify-center sm:mt-5 sm:h-20 md:h-24">
+                <Link
+                  href="/"
+                  className="absolute left-3 flex h-14 flex-col items-center sm:left-5 sm:h-20 md:h-24"
+                >
+                  <div className="relative flex aspect-square h-full flex-col items-center">
+                    <Image src={icon} fill alt="Link to the homepage" />
+                  </div>
+                  <h1 className="pt-0.5 text-sm sm:text-base md:text-xl">
+                    PostParrot
+                  </h1>
+                </Link>
+                <Search />
+              </header>
               {children}
               <div className="absolute bottom-5 left-4 flex items-center gap-2">
                 <Link href="https://github.com/FleetAdmiralJakob/postparrot">

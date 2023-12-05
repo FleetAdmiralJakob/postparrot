@@ -77,7 +77,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
           <h1 className="text-2xl font-semibold">{userData.username}</h1>
         </div>
       </Suspense>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div className="pt-4">Loading...</div>}>
         <Posts id={params.slug} />
       </Suspense>
     </>

@@ -10,10 +10,8 @@ export const runtime = "edge";
 
 export default function Page({ params }: { params: { slug: string } }) {
   return (
-    <Suspense fallback={<div className="pt-10">Loading...</div>}>
-      <div className="flex w-full justify-center pt-10">
-        <Post id={params.slug} />
-      </div>
+    <Suspense fallback="Loading...">
+      <Post id={params.slug} />
     </Suspense>
   );
 }

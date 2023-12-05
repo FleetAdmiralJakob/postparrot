@@ -66,7 +66,7 @@ const PostView = ({
   }
 
   return (
-    <div className="flex max-h-full w-3/5 flex-col gap-3 overflow-x-hidden overflow-y-scroll md:w-2/5">
+    <div className="flex max-h-full w-3/5 flex-col gap-5 overflow-x-hidden overflow-y-scroll md:w-2/5">
       {posts.map((post, index) => {
         if (!post) {
           return null;
@@ -74,8 +74,8 @@ const PostView = ({
         return (
           <div key={post.id}>
             {index !== 0 && <hr className="mr-2 border-gray-500" />}
-            <div className="flex flex-col items-center" key={post.id}>
-              <div className="mb-4 flex w-full items-center gap-4 text-left">
+            <div className="flex flex-col items-center pt-5" key={post.id}>
+              <div className="flex w-full items-center gap-4 text-left">
                 <Link href={`/user/${post.userId}`}>
                   <Image
                     src={post.imageUrl}
@@ -110,7 +110,7 @@ const PostView = ({
                 </div>
               </div>
               {post.mostHeartedComment && !replies && (
-                <div className="mb-4 flex w-full items-center gap-4 pl-7">
+                <div className="mt-4 flex w-full items-center gap-4 pl-7">
                   <Link
                     href={`/user/${post.mostHeartedComment.userId}`}
                     className="relative"
@@ -146,7 +146,10 @@ const PostView = ({
                 </div>
               )}
               {replies && (
-                <CreatePost comment={{ postId: post.id }} className="pb-5" />
+                <CreatePost
+                  comment={{ postId: post.id }}
+                  className="pb-5 pt-5"
+                />
               )}
               {"comments" in post
                 ? replies &&
@@ -155,37 +158,37 @@ const PostView = ({
                       return null;
                     }
                     return (
-                      <div
-                        key={comment.id}
-                        className="mb-4 flex w-full items-center gap-4 pl-7"
-                      >
-                        <Link
-                          href={`/user/${comment.userId}`}
-                          className="relative"
-                        >
-                          <Image
-                            src={comment.imageUrl}
-                            alt={comment.username + "'s profile picture"}
-                            width={50}
-                            height={50}
-                            className="rounded-full"
-                          />
-                        </Link>
-                        <div className="flex flex-col gap-2">
-                          <div>
-                            <p className="pb-1 text-sm font-bold text-gray-500">
-                              {comment.username} ·{" "}
-                              {dayjs(comment.createdAt).fromNow()}
-                            </p>
-                            <p className="font-bold">
-                              {replaceNewlineWithBrTag(comment.content)}
-                            </p>
+                      <div key={comment.id} className="w-full">
+                        {index !== 0 && <hr className="mr-2 border-gray-500" />}
+                        <div className="mb-4 mt-4 flex w-full items-center gap-4 pl-10">
+                          <Link
+                            href={`/user/${comment.userId}`}
+                            className="relative"
+                          >
+                            <Image
+                              src={comment.imageUrl}
+                              alt={comment.username + "'s profile picture"}
+                              width={50}
+                              height={50}
+                              className="rounded-full"
+                            />
+                          </Link>
+                          <div className="flex flex-col gap-2">
+                            <div>
+                              <p className="pb-1 text-sm font-bold text-gray-500">
+                                {comment.username} ·{" "}
+                                {dayjs(comment.createdAt).fromNow()}
+                              </p>
+                              <p className="font-bold">
+                                {replaceNewlineWithBrTag(comment.content)}
+                              </p>
+                            </div>
+                            <HeartComponent
+                              hearts={comment.hearts}
+                              heartedByMe={comment.heartedByMe}
+                              commentId={comment.id}
+                            />
                           </div>
-                          <HeartComponent
-                            hearts={comment.hearts}
-                            heartedByMe={comment.heartedByMe}
-                            commentId={comment.id}
-                          />
                         </div>
                       </div>
                     );
