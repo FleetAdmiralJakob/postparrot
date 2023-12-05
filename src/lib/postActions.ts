@@ -10,7 +10,7 @@ export const fetchAndFormatUser = async (userId: string) => {
       ? "@" + userData.username.toLowerCase()
       : "Anonymous";
 
-    return { imageUrl, username };
+    return { imageUrl, username, id: userData.id };
   } catch (error) {
     console.error(error);
     return undefined;

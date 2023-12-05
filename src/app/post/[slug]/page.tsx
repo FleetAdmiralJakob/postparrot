@@ -1,10 +1,10 @@
 import { api } from "~/trpc/server";
 import PostView, {
   type Post,
-  PostWithComments,
+  type PostWithComments,
 } from "~/app/_components/post-view";
-import { clerkClient } from "@clerk/nextjs";
 import { Suspense } from "react";
+import { fetchAndFormatUser } from "~/lib/postActions";
 
 export const runtime = "edge";
 
@@ -21,7 +21,10 @@ export default function Page({ params }: { params: { slug: string } }) {
 async function Post({ id }: { id: string }) {
   const latestPostFromAPI = await api.post.getPostByPostId.query(id);
 
-  const userData = await clerkClient.users.getUser(latestPostFromAPI.userId);
+  const userData = await fetchAndFormatUser(latestPostFromAPI.userId);
+  if (!userData) {
+    return <div>Post not found</div>;
+  }
 
   let posts: PostWithComments[] = [];
 
@@ -36,9 +39,10 @@ async function Post({ id }: { id: string }) {
         mostHeartedComment: undefined,
         comments: await Promise.all(
           latestPostFromAPI.comments.map(async (comment) => {
-            const commentUserData = await clerkClient.users.getUser(
-              comment.userId,
-            );
+            const commentUserData = await fetchAndFormatUser(comment.userId);
+            if (!commentUserData) {
+              return null;
+            }
             return {
               ...comment,
               imageUrl: commentUserData.imageUrl,
@@ -52,9 +56,37 @@ async function Post({ id }: { id: string }) {
     ];
 
   if (latestPostFromAPI.mostHeartedComment) {
-    const mostHeartedCommentUserData = await clerkClient.users.getUser(
+    const mostHeartedCommentUserData = await fetchAndFormatUser(
       latestPostFromAPI.mostHeartedComment.userId,
     );
+    if (!mostHeartedCommentUserData) {
+      posts = [
+        {
+          ...latestPostFromAPI,
+          imageUrl: userData.imageUrl,
+          username: userData.username
+            ? "@" + userData.username.toLowerCase()
+            : "Anonymous",
+          mostHeartedComment: undefined,
+          comments: await Promise.all(
+            latestPostFromAPI.comments.map(async (comment) => {
+              const commentUserData = await fetchAndFormatUser(comment.userId);
+              if (!commentUserData) {
+                return null;
+              }
+              return {
+                ...comment,
+                imageUrl: commentUserData.imageUrl,
+                username: commentUserData.username
+                  ? "@" + commentUserData.username.toLowerCase()
+                  : "Anonymous",
+              };
+            }),
+          ),
+        },
+      ];
+      return <PostView posts={posts} replies />;
+    }
     const mostHeartedCommentImageUrl: string =
       mostHeartedCommentUserData.imageUrl;
 
@@ -77,9 +109,10 @@ async function Post({ id }: { id: string }) {
         },
         comments: await Promise.all(
           latestPostFromAPI.comments.map(async (comment) => {
-            const commentUserData = await clerkClient.users.getUser(
-              comment.userId,
-            );
+            const commentUserData = await fetchAndFormatUser(comment.userId);
+            if (!commentUserData) {
+              return null;
+            }
             return {
               ...comment,
               imageUrl: commentUserData.imageUrl,

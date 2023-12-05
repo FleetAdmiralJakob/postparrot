@@ -22,22 +22,21 @@ interface PostBase extends InferSelectModel<typeof posts> {
 
 export type Post = PostBase | null;
 
-export interface PostWithComments extends InferSelectModel<typeof posts> {
+export type PostWithComments =
+  | (PostBase & {
+      commentAmount: number;
+      comments: Comment[];
+    })
+  | null;
+
+interface CommentBase extends InferSelectModel<typeof comments> {
   imageUrl: string;
   username: string;
   hearts: number;
   heartedByMe: boolean;
-  mostHeartedComment?: Comment;
-  commentAmount: number;
-  comments: Comment[];
 }
 
-export interface Comment extends InferSelectModel<typeof comments> {
-  imageUrl: string;
-  username: string;
-  hearts: number;
-  heartedByMe: boolean;
-}
+export type Comment = CommentBase | null;
 
 function replaceNewlineWithBrTag(text: string) {
   return (text || "").split("\n").map((item, key) => {
@@ -151,7 +150,10 @@ const PostView = ({
               )}
               {"comments" in post
                 ? replies &&
-                  post.comments.map((comment: Comment) => {
+                  post.comments.map((comment: Comment, index) => {
+                    if (!comment) {
+                      return null;
+                    }
                     return (
                       <div
                         key={comment.id}

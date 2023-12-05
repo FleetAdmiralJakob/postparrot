@@ -1,6 +1,5 @@
 import { api } from "~/trpc/server";
 import PostView, { type Post } from "~/app/_components/post-view";
-import { clerkClient } from "@clerk/nextjs";
 import { Suspense } from "react";
 import Image from "next/image";
 import { type Metadata } from "next";
@@ -37,7 +36,13 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  const userData = await clerkClient.users.getUser(params.slug);
+  const userData = await fetchAndFormatUser(params.slug);
+  if (!userData) {
+    return {
+      title: `User not found - PostParrot`,
+      description: `User not found on PostParrot.`,
+    };
+  }
 
   return {
     title: `${
@@ -50,7 +55,10 @@ export async function generateMetadata({
 }
 
 export default async function Page({ params }: { params: { slug: string } }) {
-  const userData = await clerkClient.users.getUser(params.slug);
+  const userData = await fetchAndFormatUser(params.slug);
+  if (!userData) {
+    return <div>Post not found</div>;
+  }
 
   return (
     <>
