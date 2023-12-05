@@ -68,13 +68,10 @@ const PostView = ({
     <div className="flex max-h-full w-3/5 flex-col gap-3 overflow-x-hidden overflow-y-scroll md:w-2/5">
       {posts.map((post, index) => {
         return (
-          <>
+          <div key={post.id}>
             {index !== 0 && <hr className="mr-2 border-gray-500" />}
             <div className="flex flex-col items-center" key={post.id}>
-              <div
-                key={post.id}
-                className="mb-4 flex w-full items-center gap-4 text-left"
-              >
+              <div className="mb-4 flex w-full items-center gap-4 text-left">
                 <Link href={`/user/${post.userId}`}>
                   <Image
                     src={post.imageUrl}
@@ -188,7 +185,7 @@ const PostView = ({
                   })
                 : null}
             </div>
-          </>
+          </div>
         );
       })}
     </div>
