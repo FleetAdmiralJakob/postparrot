@@ -11,7 +11,7 @@ import { MessageCircle } from "lucide-react";
 
 dayjs.extend(relativeTime);
 
-export interface Post extends InferSelectModel<typeof posts> {
+interface PostBase extends InferSelectModel<typeof posts> {
   imageUrl: string;
   username: string;
   hearts: number;
@@ -19,6 +19,8 @@ export interface Post extends InferSelectModel<typeof posts> {
   mostHeartedComment?: Comment;
   commentAmount: number;
 }
+
+export type Post = PostBase | null;
 
 export interface PostWithComments extends InferSelectModel<typeof posts> {
   imageUrl: string;
@@ -67,6 +69,9 @@ const PostView = ({
   return (
     <div className="flex max-h-full w-3/5 flex-col gap-3 overflow-x-hidden overflow-y-scroll md:w-2/5">
       {posts.map((post, index) => {
+        if (!post) {
+          return null;
+        }
         return (
           <div key={post.id}>
             {index !== 0 && <hr className="mr-2 border-gray-500" />}

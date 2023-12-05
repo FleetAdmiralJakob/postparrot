@@ -42,6 +42,9 @@ async function HomePostFeed() {
   const posts: Post[] = await Promise.all(
     latestPostsFromAPI.map(async (post) => {
       const userData = await fetchAndFormatUser(post.userId);
+      if (!userData) {
+        return null;
+      }
       let mostHeartedCommentUserData = undefined;
 
       if (post.mostHeartedComment)

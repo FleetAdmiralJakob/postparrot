@@ -3,13 +3,18 @@ import { type Post } from "~/app/_components/post-view";
 import { type RouterOutputs } from "~/trpc/shared";
 
 export const fetchAndFormatUser = async (userId: string) => {
-  const userData = await clerkClient.users.getUser(userId);
-  const imageUrl: string = userData.imageUrl;
-  const username: string = userData.username
-    ? "@" + userData.username.toLowerCase()
-    : "Anonymous";
+  try {
+    const userData = await clerkClient.users.getUser(userId);
+    const imageUrl: string = userData.imageUrl;
+    const username: string = userData.username
+      ? "@" + userData.username.toLowerCase()
+      : "Anonymous";
 
-  return { imageUrl, username };
+    return { imageUrl, username };
+  } catch (error) {
+    console.error(error);
+    return undefined;
+  }
 };
 
 export const assemblePost = async (
