@@ -13,6 +13,7 @@ import Image from "next/image";
 import icon from "~/assets/icon.png";
 import { Analytics } from "@vercel/analytics/react";
 import Search from "~/app/_components/search";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -70,6 +71,7 @@ export default function RootLayout({
               </div>
             </main>
           </TRPCReactProvider>
+          <SpeedInsights />
           <Analytics />
         </body>
       </html>
