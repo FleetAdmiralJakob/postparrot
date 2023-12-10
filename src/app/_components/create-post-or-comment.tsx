@@ -9,7 +9,17 @@ import { cn } from "~/lib/utils";
 import { Textarea } from "~/app/_components/ui/textarea";
 import { Button } from "~/app/_components/ui/button";
 
-export function CreatePost({
+/**
+ * Create a post or a comment.
+ *
+ * @param {Object} options - The options for creating a post or a comment.
+ * @param {Object} options.comment - The comment object (optional).
+ *      - comment.postId: The ID of the post where the comment will be created.
+ * @param {string} options.className - The class name for the form (optional).
+ *
+ * @return {JSX.Element} The form component for creating a post or a comment.
+ */
+export function CreatePostOrComment({
   comment,
   className,
 }: {

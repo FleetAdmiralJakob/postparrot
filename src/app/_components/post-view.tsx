@@ -6,7 +6,7 @@ import { type comments, type posts } from "~/server/db/schema";
 import relativeTime from "dayjs/plugin/relativeTime";
 import Link from "next/link";
 import HeartComponent from "./heart";
-import { CreatePost } from "~/app/_components/create-post";
+import { CreatePostOrComment } from "~/app/_components/create-post-or-comment";
 import { MessageCircle } from "lucide-react";
 
 dayjs.extend(relativeTime);
@@ -146,7 +146,7 @@ const PostView = ({
                 </div>
               )}
               {replies && (
-                <CreatePost
+                <CreatePostOrComment
                   comment={{ postId: post.id }}
                   className="pb-5 pt-5"
                 />

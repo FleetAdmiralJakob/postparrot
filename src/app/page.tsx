@@ -7,7 +7,7 @@ import {
   UserButton,
 } from "@clerk/nextjs";
 import { Suspense } from "react";
-import { CreatePost } from "~/app/_components/create-post";
+import { CreatePostOrComment } from "~/app/_components/create-post-or-comment";
 import PostView, { type Post } from "~/app/_components/post-view";
 import { assemblePost, fetchAndFormatUser } from "~/lib/postActions";
 
@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <>
       <div className="mb-8 flex w-full flex-col items-center gap-3">
-        <CreatePost />
+        <CreatePostOrComment />
         <div className="flex justify-center gap-4">
           <SignedOut>
             <SignInButton />
