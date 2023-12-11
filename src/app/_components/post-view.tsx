@@ -66,9 +66,15 @@ const PostView = ({
     }) => {
   if (posts.length === 0) {
     if (customNoPostsMessage) {
-      return <div>{customNoPostsMessage}</div>;
+      return (
+        <div className="flex w-3/5 justify-center md:w-2/5">
+          {customNoPostsMessage}
+        </div>
+      );
     }
-    return <div>No posts yet</div>;
+    return (
+      <div className="flex w-3/5 justify-center md:w-2/5">No posts yet</div>
+    );
   }
 
   return (
