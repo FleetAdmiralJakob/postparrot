@@ -2,7 +2,7 @@ import { z } from "zod";
 
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 import { commentHearts, comments, hearts, posts } from "~/server/db/schema";
-import { and, eq } from "drizzle-orm";
+import { and, eq, ilike } from "drizzle-orm";
 
 export const postRouter = createTRPCRouter({
   create: publicProcedure
@@ -256,5 +256,57 @@ export const postRouter = createTRPCRouter({
           userId: ctx.userId,
         });
       }
+    }),
+  findPostsBySearch: publicProcedure
+    .input(z.string())
+    .query(async ({ ctx, input }) => {
+      const postsFromDB = await ctx.db.query.posts.findMany({
+        where: ilike(posts.content, `%${input}%`),
+        orderBy: (posts, { desc }) => [desc(posts.createdAt)],
+        limit: 100,
+        with: {
+          hearts: true,
+          comments: {
+            orderBy: (comments, { desc }) => [desc(comments.createdAt)],
+            with: {
+              commentHearts: true,
+            },
+          },
+        },
+      });
+
+      return postsFromDB.map((post) => {
+        let mostHeartedComment;
+
+        if (post.comments && post.comments.length > 0) {
+          mostHeartedComment = post.comments.reduce((acc, comment) => {
+            if (!acc) return comment;
+            if (
+              comment.commentHearts.length > (acc.commentHearts?.length ?? 0)
+            ) {
+              return comment;
+            }
+            return acc;
+          }, post.comments[0]);
+        }
+
+        const { comments, ...postWithoutComments } = post;
+
+        return {
+          ...postWithoutComments,
+          hearts: post.hearts.length,
+          heartedByMe: post.hearts.some((heart) => heart.userId === ctx.userId),
+          commentAmount: post.comments.length,
+          mostHeartedComment: mostHeartedComment
+            ? {
+                ...mostHeartedComment,
+                hearts: mostHeartedComment.commentHearts.length,
+                heartedByMe: mostHeartedComment.commentHearts.some(
+                  (heart) => heart.userId === ctx.userId,
+                ),
+              }
+            : undefined,
+        };
+      });
     }),
 });

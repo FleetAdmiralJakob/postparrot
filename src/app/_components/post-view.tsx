@@ -52,16 +52,22 @@ function replaceNewlineWithBrTag(text: string) {
 const PostView = ({
   posts,
   replies,
+  customNoPostsMessage,
 }:
   | {
       posts: Post[];
       replies?: false;
+      customNoPostsMessage?: string;
     }
   | {
       posts: PostWithComments[];
       replies?: true;
+      customNoPostsMessage?: string;
     }) => {
   if (posts.length === 0) {
+    if (customNoPostsMessage) {
+      return <div>{customNoPostsMessage}</div>;
+    }
     return <div>No posts yet</div>;
   }
 
