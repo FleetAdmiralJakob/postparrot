@@ -5,8 +5,11 @@ import PostView, {
 } from "~/app/_components/post-view";
 import { Suspense } from "react";
 import { fetchAndFormatUser } from "~/lib/postActions";
+import { z } from "zod";
 
 export const runtime = "edge";
+
+const idSchema = z.string().uuid();
 
 export default function Page({ params }: { params: { slug: string } }) {
   return (
@@ -17,6 +20,10 @@ export default function Page({ params }: { params: { slug: string } }) {
 }
 
 async function Post({ id }: { id: string }) {
+  idSchema.safeParse(id);
+  if (!idSchema.safeParse(id).success) {
+    return <div>Post not found</div>;
+  }
   const latestPostFromAPI = await api.post.getPostByPostId.query(id);
 
   const userData = await fetchAndFormatUser(latestPostFromAPI.userId);

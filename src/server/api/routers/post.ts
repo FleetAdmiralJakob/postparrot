@@ -83,7 +83,7 @@ export const postRouter = createTRPCRouter({
     });
   }),
   getPostByPostId: publicProcedure
-    .input(z.string())
+    .input(z.string().uuid())
     .query(async ({ ctx, input }) => {
       const postFromDB = await ctx.db.query.posts.findFirst({
         where: eq(posts.id, input),
@@ -195,7 +195,7 @@ export const postRouter = createTRPCRouter({
       });
     }),
   heartPostByPostId: publicProcedure
-    .input(z.string())
+    .input(z.string().uuid())
     .mutation(async ({ ctx, input }) => {
       if (!ctx.userId) throw new Error("Not logged in");
 
@@ -224,7 +224,7 @@ export const postRouter = createTRPCRouter({
       }
     }),
   heartCommentByCommentId: publicProcedure
-    .input(z.string())
+    .input(z.string().uuid())
     .mutation(async ({ ctx, input }) => {
       if (!ctx.userId) throw new Error("Not logged in");
 
@@ -258,7 +258,7 @@ export const postRouter = createTRPCRouter({
       }
     }),
   findPostsBySearch: publicProcedure
-    .input(z.string())
+    .input(z.string().min(1))
     .query(async ({ ctx, input }) => {
       const postsFromDB = await ctx.db.query.posts.findMany({
         where: ilike(posts.content, `%${input}%`),
