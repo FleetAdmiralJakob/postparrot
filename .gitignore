@@ -42,3 +42,6 @@ yarn-error.log*
 *.tsbuildinfo
 
 .vercel
+
+/public/sw.js
+/public/swe-worker-development.js

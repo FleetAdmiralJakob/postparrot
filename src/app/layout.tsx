@@ -24,6 +24,7 @@ export const metadata = {
   title: "PostParrot",
   description: "A social media platform",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
