@@ -7,6 +7,18 @@ import cn from "classnames";
 import { useEffect, useState } from "react";
 import { useAuth } from "@clerk/nextjs";
 
+/**
+ * HeartComponent is a React component that allows users to "heart" or "unheart" a post or a comment.
+ * It displays a heart icon and the current number of hearts. The heart icon can be clicked to toggle the heart status.
+ *
+ * @param {Object} props - The properties passed to the component.
+ * @param {number} props.hearts - The current number of hearts.
+ * @param {boolean} props.heartedByMe - Whether the current user has hearted the item.
+ * @param {string} [props.postId] - The ID of the post, if the item is a post.
+ * @param {string} [props.commentId] - The ID of the comment, if the item is a comment.
+ *
+ * @returns {JSX.Element} The rendered HeartComponent.
+ */
 const HeartComponent = ({
   hearts,
   heartedByMe: initialheartedByMe,
@@ -75,6 +87,7 @@ const HeartComponent = ({
           }
         }}
         disabled={heartPost.isLoading || !isSignedIn}
+        className="disabled:opacity-50"
       >
         <Heart
           className={cn(
