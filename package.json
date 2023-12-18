@@ -27,6 +27,7 @@
     "@trpc/next": "^10.44.1",
     "@trpc/react-query": "^10.44.1",
     "@trpc/server": "^10.44.1",
+    "@uploadthing/react": "^6.0.2",
     "@vercel/analytics": "^1.1.1",
     "@vercel/postgres": "^0.5.1",
     "@vercel/speed-insights": "^1.0.0",
@@ -45,6 +46,7 @@
     "superjson": "^2.0.0",
     "tailwind-merge": "^2.0.0",
     "tailwindcss-animate": "^1.0.7",
+    "uploadthing": "^6.1.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {

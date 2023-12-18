@@ -1,13 +1,14 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 import { api } from "~/trpc/react";
 import { useAuth } from "@clerk/nextjs";
 import { cn } from "~/lib/utils";
 import { Textarea } from "~/app/_components/ui/textarea";
 import { Button } from "~/app/_components/ui/button";
+import { useDropzone } from "@uploadthing/react/hooks";
 
 /**
  * Create a post or a comment.
@@ -45,6 +46,11 @@ export function CreatePostOrComment({
 
   const { isSignedIn } = useAuth();
 
+  const onDrop = useCallback((acceptedFiles: File[]) => {
+    // Do something with the files
+  }, []);
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+
   return (
     <form
       onSubmit={(e) => {
@@ -59,6 +65,18 @@ export function CreatePostOrComment({
       }}
       className={cn("flex w-8/12 flex-col gap-2 md:max-w-lg", className)}
     >
+      <div
+        {...getRootProps()}
+        className={cn(
+          "flex items-center justify-center rounded-md border border-gray-300",
+          isDragActive ? "bg-gray-100" : "bg-white",
+        )}
+      >
+        <input {...getInputProps()} />
+        <p className="text-sm text-gray-500">
+          Drag and drop your image here, or click to select an image.
+        </p>
+      </div>
       <Textarea
         placeholder={comment ? "Add a comment..." : "What's on your mind?"}
         value={content}

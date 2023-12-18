@@ -14,6 +14,9 @@ import icon from "~/assets/icon.png";
 import { Analytics } from "@vercel/analytics/react";
 import Search from "~/app/_components/search";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { ourFileRouter } from "~/app/api/uploadthing/core";
+import { extractRouterConfig } from "uploadthing/server";
+import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -58,6 +61,15 @@ export default function RootLayout({
                 </Link>
                 <Search />
               </header>
+              <NextSSRPlugin
+                /**
+                 * The `extractRouterConfig` will extract **only** the route configs
+                 * from the router to prevent additional information from being
+                 * leaked to the client. The data passed to the client is the same
+                 * as if you were to fetch `/api/uploadthing` directly.
+                 */
+                routerConfig={extractRouterConfig(ourFileRouter)}
+              />
               {children}
               <div className="absolute bottom-5 left-4 flex items-center gap-2">
                 <Link href="https://github.com/FleetAdmiralJakob/postparrot">
