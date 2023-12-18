@@ -40,7 +40,7 @@ export default function RootLayout({
     >
       <html lang="en">
         <body
-          className={`font-sans ${inter.variable} w-full bg-black text-white`}
+          className={`font-sans ${inter.variable} w-full bg-background text-primary`}
         >
           <TRPCReactProvider cookies={cookies().toString()}>
             <main className="flex h-screen flex-col items-center">
