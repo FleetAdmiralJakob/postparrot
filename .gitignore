@@ -45,3 +45,4 @@ yarn-error.log*
 
 /public/sw.js
 /public/swe-worker-development.js
+/public/swe-worker-*.js
