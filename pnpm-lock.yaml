@@ -49,7 +49,7 @@ dependencies:
     version: 10.44.1
   '@uploadthing/react':
     specifier: ^6.0.2
-    version: 6.0.2(next@14.0.3)(react@18.2.0)(uploadthing@6.1.0)
+    version: 6.0.2(next@14.0.4)(react@18.2.0)(uploadthing@6.1.0)
   '@vercel/analytics':
     specifier: ^1.1.1
     version: 1.1.1
@@ -2157,7 +2157,7 @@ packages:
     resolution: {integrity: sha512-ZUo1JHOPPMZDsUw1mOhhVDIvJGlsjj6T0xJ/YJtulyJwL43S9B5pxg1cHcRuTEgjaxj7B55jiqQ6r9mDrrjH9A==}
     dev: false
 
-  /@uploadthing/react@6.0.2(next@14.0.3)(react@18.2.0)(uploadthing@6.1.0):
+  /@uploadthing/react@6.0.2(next@14.0.4)(react@18.2.0)(uploadthing@6.1.0):
     resolution: {integrity: sha512-gUJwNvSFs0bg4m0c6wlFo1Fe3uyGTmAp0BESkRZvqyN4hNhIcxMY0TxjqxCKsYkv1T0/y3dHgN/XU2BDAQQh7w==}
     peerDependencies:
       next: '*'
@@ -2170,7 +2170,7 @@ packages:
       '@uploadthing/shared': 6.0.2(@uploadthing/mime-types@0.2.2)
       attr-accept: 2.2.2
       file-selector: 0.6.0
-      next: 14.0.3(react-dom@18.2.0)(react@18.2.0)
+      next: 14.0.4(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       tailwind-merge: 1.14.0
       uploadthing: 6.1.0
