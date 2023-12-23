@@ -17,17 +17,25 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ourFileRouter } from "~/app/api/uploadthing/core";
 import { extractRouterConfig } from "uploadthing/server";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
+import { type Metadata } from "next";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
 });
 
-export const metadata = {
-  title: "PostParrot",
+const APP_DEFAULT_TITLE = "PostParrot";
+
+export const metadata: Metadata = {
+  title: APP_DEFAULT_TITLE,
   description: "A social media platform",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
   manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: APP_DEFAULT_TITLE,
+  },
 };
 
 export default function RootLayout({
