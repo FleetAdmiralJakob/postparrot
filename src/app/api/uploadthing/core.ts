@@ -1,5 +1,7 @@
 import { createUploadthing, type FileRouter } from "uploadthing/next";
 import { auth } from "@clerk/nextjs";
+import { db } from "~/server/db";
+import { files } from "~/server/db/schema";
 
 const f = createUploadthing();
 
@@ -16,7 +18,7 @@ export const ourFileRouter = {
       const user = auth();
 
       // If you throw, the user will not be able to upload
-      if (!user) throw new Error("Unauthorized");
+      if (!user || !user.userId) throw new Error("Unauthorized");
 
       // Whatever is returned here is accessible in onUploadComplete as `metadata`
       return { userId: user.userId };
@@ -26,6 +28,13 @@ export const ourFileRouter = {
       console.log("Upload complete for userId:", metadata.userId);
 
       console.log("file url", file.url);
+
+      await db.insert(files).values({
+        name: file.name,
+        url: file.url,
+        uploadedBy: metadata.userId,
+        key: file.key,
+      });
 
       // !!! Whatever is returned here is sent to the clientside `onClientUploadComplete` callback
       return { uploadedBy: metadata.userId };

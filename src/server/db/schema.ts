@@ -101,3 +101,23 @@ export const commentHeartsRelations = relations(commentHearts, ({ one }) => ({
     references: [comments.id],
   }),
 }));
+
+// Files for posts or comments
+export const files = pgTable(
+  "file",
+  {
+    id: uuid("id").defaultRandom().primaryKey(),
+    name: varchar("name", { length: 300 }).notNull(),
+    createdAt: timestamp("created_at")
+      .default(sql`CURRENT_TIMESTAMP`)
+      .notNull(),
+    url: varchar("url", { length: 300 }).notNull(),
+    key: varchar("key", { length: 300 }).notNull(),
+    uploadedBy: varchar("uploaded_by").notNull(),
+  },
+  (example) => ({
+    nameIndex: index("name_idx").on(example.name),
+    urlIndex: index("url_idx").on(example.url),
+    keyIndex: index("key_idx").on(example.key),
+  }),
+);
