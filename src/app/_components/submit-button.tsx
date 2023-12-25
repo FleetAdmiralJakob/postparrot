@@ -15,6 +15,7 @@ export const SubmitButton = ({
     <Button
       type="submit"
       aria-disabled={!comment ? pending || !isSignedIn : pending || !isSignedIn}
+      disabled={!comment ? pending || !isSignedIn : pending || !isSignedIn}
     >
       {comment
         ? pending
