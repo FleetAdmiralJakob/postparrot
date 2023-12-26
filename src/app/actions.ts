@@ -1,7 +1,7 @@
 "use server";
 import "server-only";
 import { api } from "~/trpc/server";
-import { revalidatePath } from "next/dist/server/web/spec-extension/revalidate-path";
+import { revalidatePath } from "next/cache";
 import { auth } from "@clerk/nextjs";
 
 export async function createPostOrComment(
