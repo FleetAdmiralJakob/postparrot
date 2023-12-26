@@ -24,11 +24,7 @@ export function CreatePostOrComment({
   const { userId } = auth();
   const isSignedIn = !!userId;
 
-  const createPostOrCommentAction = createPostOrComment.bind(
-    null,
-    comment,
-    isSignedIn,
-  );
+  const createPostOrCommentAction = createPostOrComment.bind(null, comment);
 
   return (
     <form
