@@ -14,7 +14,10 @@ const withSerwist = withSerwistInit({
 /** @type {import("next").NextConfig} */
 const config = {
     images: {
-        domains: ["img.clerk.com"]
+        domains: ["img.clerk.com"],
+        remotePatterns: [{
+            hostname: "img.clerk.com"
+        }]
     },
     reactStrictMode: true
 };
