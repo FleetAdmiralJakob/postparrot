@@ -35,7 +35,7 @@
     "clsx": "^2.0.0",
     "dayjs": "^1.11.10",
     "drizzle-orm": "^0.29.1",
-    "lucide-react": "^0.302.0",
+    "lucide-react": "^0.305.0",
     "next": "^14.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -70,5 +70,5 @@
   "ct3aMetadata": {
     "initVersion": "7.23.2"
   },
-  "packageManager": "pnpm@8.12.1"
+  "packageManager": "pnpm@8.14.0"
 }
