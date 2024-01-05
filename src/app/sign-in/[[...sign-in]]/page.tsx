@@ -1,6 +1,7 @@
 import { SignIn } from "@clerk/nextjs";
 
 export const runtime = "edge";
+export const preferredRegion = ["iad1"];
 
 const SignInPage = () => {
   return (

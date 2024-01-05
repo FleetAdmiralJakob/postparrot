@@ -12,6 +12,7 @@ import PostView, { type Post } from "~/app/_components/post-view";
 import { assemblePost, fetchAndFormatUser } from "~/lib/postActions";
 
 export const runtime = "edge";
+export const preferredRegion = ["iad1"];
 
 export default function Home() {
   return (

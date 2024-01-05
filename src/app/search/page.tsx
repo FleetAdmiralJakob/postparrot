@@ -6,6 +6,9 @@ import { clerkClient } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 
+export const runtime = "edge";
+export const preferredRegion = ["iad1"];
+
 const SearchPage = async ({
   searchParams,
 }: {

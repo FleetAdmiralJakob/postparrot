@@ -6,6 +6,7 @@ import { type Metadata } from "next";
 import { assemblePost, fetchAndFormatUser } from "~/lib/postActions";
 
 export const runtime = "edge";
+export const preferredRegion = ["iad1"];
 
 function hash(s: string): number {
   let hash = 0;

@@ -1,3 +1,6 @@
+export const runtime = "edge";
+export const preferredRegion = ["iad1"];
+
 const OfflinePage = () => {
   return (
     <div className="flex w-full flex-col items-center">

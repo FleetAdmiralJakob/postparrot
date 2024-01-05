@@ -8,6 +8,7 @@ import { fetchAndFormatUser } from "~/lib/postActions";
 import { z } from "zod";
 
 export const runtime = "edge";
+export const preferredRegion = ["iad1"];
 
 const idSchema = z.string().uuid();
 
