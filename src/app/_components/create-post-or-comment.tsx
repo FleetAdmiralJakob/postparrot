@@ -4,6 +4,8 @@ import { Textarea } from "~/app/_components/ui/textarea";
 import { SubmitButton } from "~/app/_components/submit-button";
 import { createPostOrComment } from "~/app/actions";
 
+// TODO: Make that this form resets after submitting.
+
 /**
  * Create a post or a comment.
  *
