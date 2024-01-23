@@ -51,8 +51,8 @@ dependencies:
     specifier: ^1.1.1
     version: 1.1.1
   '@vercel/postgres':
-    specifier: ^0.5.1
-    version: 0.5.1
+    specifier: ^0.7.0
+    version: 0.7.1
   '@vercel/speed-insights':
     specifier: ^1.0.2
     version: 1.0.2
@@ -70,7 +70,7 @@ dependencies:
     version: 1.11.10
   drizzle-orm:
     specifier: ^0.29.1
-    version: 0.29.3(@types/react@18.2.46)(@vercel/postgres@0.5.1)(pg@8.11.3)(react@18.2.0)
+    version: 0.29.3(@types/react@18.2.46)(@vercel/postgres@0.7.1)(pg@8.11.3)(react@18.2.0)
   lucide-react:
     specifier: ^0.314.0
     version: 0.314.0(react@18.2.0)
@@ -992,8 +992,8 @@ packages:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  /@neondatabase/serverless@0.6.0:
-    resolution: {integrity: sha512-qXxBRYN0m2v8kVQBfMxbzNGn2xFAhTXFibzQlE++NfJ56Shz3m7+MyBBtXDlEH+3Wfa6lToDXf1MElocY4sJ3w==}
+  /@neondatabase/serverless@0.7.2:
+    resolution: {integrity: sha512-wU3WA2uTyNO7wjPs3Mg0G01jztAxUxzd9/mskMmtPwPTjf7JKWi9AW5/puOGXLxmZ9PVgRFeBVRVYq5nBPhsCg==}
     dependencies:
       '@types/pg': 8.6.6
     dev: false
@@ -1872,11 +1872,11 @@ packages:
       server-only: 0.0.1
     dev: false
 
-  /@vercel/postgres@0.5.1:
-    resolution: {integrity: sha512-JKl8QOBIDnifhkxAhIKtY0A5Tb8oWBf2nzZhm0OH7Ffjsl0hGVnDL2w1/FCfpX8xna3JAWM034NGuhZfTFdmiw==}
+  /@vercel/postgres@0.7.1:
+    resolution: {integrity: sha512-QTOQrzxkB+H37HrQ8n7uxuXQb9Q4/L8sibMuO98dNvkIv79iDmiy/jJ1rAcwn+D/6In3LnXAoH6S+XL6rpi8tQ==}
     engines: {node: '>=14.6'}
     dependencies:
-      '@neondatabase/serverless': 0.6.0
+      '@neondatabase/serverless': 0.7.2
       bufferutil: 4.0.8
       utf-8-validate: 6.0.3
       ws: 8.14.2(bufferutil@4.0.8)(utf-8-validate@6.0.3)
@@ -2669,7 +2669,7 @@ packages:
       - supports-color
     dev: true
 
-  /drizzle-orm@0.29.3(@types/react@18.2.46)(@vercel/postgres@0.5.1)(pg@8.11.3)(react@18.2.0):
+  /drizzle-orm@0.29.3(@types/react@18.2.46)(@vercel/postgres@0.7.1)(pg@8.11.3)(react@18.2.0):
     resolution: {integrity: sha512-uSE027csliGSGYD0pqtM+SAQATMREb3eSM/U8s6r+Y0RFwTKwftnwwSkqx3oS65UBgqDOM0gMTl5UGNpt6lW0A==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
@@ -2741,7 +2741,7 @@ packages:
         optional: true
     dependencies:
       '@types/react': 18.2.46
-      '@vercel/postgres': 0.5.1
+      '@vercel/postgres': 0.7.1
       pg: 8.11.3
       react: 18.2.0
     dev: false
