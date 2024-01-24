@@ -21,7 +21,7 @@
     "@serwist/next": "^8.1.1",
     "@serwist/precaching": "^8.1.1",
     "@serwist/sw": "^8.1.1",
-    "@t3-oss/env-nextjs": "^0.7.0",
+    "@t3-oss/env-nextjs": "^0.8.0",
     "@tanstack/react-query": "^4.36.1",
     "@trpc/client": "^10.44.1",
     "@trpc/next": "^10.44.1",
