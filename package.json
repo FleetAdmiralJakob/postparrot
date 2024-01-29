@@ -10,7 +10,8 @@
     "migrations:push": "dotenv pnpm tsx src/server/db/migrate.ts",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@clerk/nextjs": "^4.29.5",
