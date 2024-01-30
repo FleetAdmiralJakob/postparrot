@@ -41,7 +41,7 @@ const HeartComponent = ({
 
   const { isSignedIn } = useAuth();
 
-  const heartPost = api.post.heartPostByPostId.useMutation({
+  const heartPost = api.heart.heartPostByPostId.useMutation({
     onSuccess: () => {
       router.refresh();
     },
@@ -52,7 +52,7 @@ const HeartComponent = ({
     },
   });
 
-  const heartComment = api.post.heartCommentByCommentId.useMutation({
+  const heartComment = api.heart.heartCommentByCommentId.useMutation({
     onSuccess: () => {
       router.refresh();
     },
