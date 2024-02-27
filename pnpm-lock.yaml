@@ -16,10 +16,10 @@ dependencies:
     version: 3.3.4(react-hook-form@7.50.1)
   '@radix-ui/react-label':
     specifier: ^2.0.2
-    version: 2.0.2(@types/react-dom@18.2.19)(@types/react@18.2.59)(react-dom@18.2.0)(react@18.2.0)
+    version: 2.0.2(@types/react-dom@18.2.19)(@types/react@18.2.60)(react-dom@18.2.0)(react@18.2.0)
   '@radix-ui/react-slot':
     specifier: ^1.0.2
-    version: 1.0.2(@types/react@18.2.59)(react@18.2.0)
+    version: 1.0.2(@types/react@18.2.60)(react@18.2.0)
   '@serwist/next':
     specifier: ^8.4.4
     version: 8.4.4(next@14.1.0)(webpack@5.90.3)
@@ -70,7 +70,7 @@ dependencies:
     version: 1.11.10
   drizzle-orm:
     specifier: ^0.29.3
-    version: 0.29.4(@types/react@18.2.59)(@vercel/postgres@0.7.2)(pg@8.11.3)(react@18.2.0)
+    version: 0.29.4(@types/react@18.2.60)(@vercel/postgres@0.7.2)(pg@8.11.3)(react@18.2.0)
   lucide-react:
     specifier: ^0.341.0
     version: 0.341.0(react@18.2.0)
@@ -114,7 +114,7 @@ devDependencies:
     version: 20.11.20
   '@types/react':
     specifier: ^18.2.48
-    version: 18.2.59
+    version: 18.2.60
   '@types/react-dom':
     specifier: ^18.2.18
     version: 18.2.19
@@ -1139,7 +1139,7 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@radix-ui/react-compose-refs@1.0.1(@types/react@18.2.59)(react@18.2.0):
+  /@radix-ui/react-compose-refs@1.0.1(@types/react@18.2.60)(react@18.2.0):
     resolution: {integrity: sha512-fDSBgd44FKHa1FRMU59qBMPFcl2PZE+2nmqunj+BWFyYYjnhIDWL2ItDs3rrbJDQOtzt5nIebLCQc4QRfz6LJw==}
     peerDependencies:
       '@types/react': '*'
@@ -1149,11 +1149,11 @@ packages:
         optional: true
     dependencies:
       '@babel/runtime': 7.23.9
-      '@types/react': 18.2.59
+      '@types/react': 18.2.60
       react: 18.2.0
     dev: false
 
-  /@radix-ui/react-label@2.0.2(@types/react-dom@18.2.19)(@types/react@18.2.59)(react-dom@18.2.0)(react@18.2.0):
+  /@radix-ui/react-label@2.0.2(@types/react-dom@18.2.19)(@types/react@18.2.60)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-N5ehvlM7qoTLx7nWPodsPYPgMzA5WM8zZChQg8nyFJKnDO5WHdba1vv5/H6IO5LtJMfD2Q3wh1qHFGNtK0w3bQ==}
     peerDependencies:
       '@types/react': '*'
@@ -1167,14 +1167,14 @@ packages:
         optional: true
     dependencies:
       '@babel/runtime': 7.23.9
-      '@radix-ui/react-primitive': 1.0.3(@types/react-dom@18.2.19)(@types/react@18.2.59)(react-dom@18.2.0)(react@18.2.0)
-      '@types/react': 18.2.59
+      '@radix-ui/react-primitive': 1.0.3(@types/react-dom@18.2.19)(@types/react@18.2.60)(react-dom@18.2.0)(react@18.2.0)
+      '@types/react': 18.2.60
       '@types/react-dom': 18.2.19
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@radix-ui/react-primitive@1.0.3(@types/react-dom@18.2.19)(@types/react@18.2.59)(react-dom@18.2.0)(react@18.2.0):
+  /@radix-ui/react-primitive@1.0.3(@types/react-dom@18.2.19)(@types/react@18.2.60)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-yi58uVyoAcK/Nq1inRY56ZSjKypBNKTa/1mcL8qdl6oJeEaDbOldlzrGn7P6Q3Id5d+SYNGc5AJgc4vGhjs5+g==}
     peerDependencies:
       '@types/react': '*'
@@ -1188,14 +1188,14 @@ packages:
         optional: true
     dependencies:
       '@babel/runtime': 7.23.9
-      '@radix-ui/react-slot': 1.0.2(@types/react@18.2.59)(react@18.2.0)
-      '@types/react': 18.2.59
+      '@radix-ui/react-slot': 1.0.2(@types/react@18.2.60)(react@18.2.0)
+      '@types/react': 18.2.60
       '@types/react-dom': 18.2.19
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@radix-ui/react-slot@1.0.2(@types/react@18.2.59)(react@18.2.0):
+  /@radix-ui/react-slot@1.0.2(@types/react@18.2.60)(react@18.2.0):
     resolution: {integrity: sha512-YeTpuq4deV+6DusvVUW4ivBgnkHwECUu0BiN43L5UCDFgdhsRUWAghhTF5MbvNTPzmiFOx90asDSUjWuCNapwg==}
     peerDependencies:
       '@types/react': '*'
@@ -1205,8 +1205,8 @@ packages:
         optional: true
     dependencies:
       '@babel/runtime': 7.23.9
-      '@radix-ui/react-compose-refs': 1.0.1(@types/react@18.2.59)(react@18.2.0)
-      '@types/react': 18.2.59
+      '@radix-ui/react-compose-refs': 1.0.1(@types/react@18.2.60)(react@18.2.0)
+      '@types/react': 18.2.60
       react: 18.2.0
     dev: false
 
@@ -1693,10 +1693,10 @@ packages:
   /@types/react-dom@18.2.19:
     resolution: {integrity: sha512-aZvQL6uUbIJpjZk4U8JZGbau9KDeAwMfmhyWorxgBkqDIEf6ROjRozcmPIicqsUwPUjbkDfHKgGee1Lq65APcA==}
     dependencies:
-      '@types/react': 18.2.59
+      '@types/react': 18.2.60
 
-  /@types/react@18.2.59:
-    resolution: {integrity: sha512-DE+F6BYEC8VtajY85Qr7mmhTd/79rJKIHCg99MU9SWPB4xvLb6D1za2vYflgZfmPqQVEr6UqJTnLXEwzpVPuOg==}
+  /@types/react@18.2.60:
+    resolution: {integrity: sha512-dfiPj9+k20jJrLGOu9Nf6eqxm2EyJRrq2NvwOFsfbb7sFExZ9WELPs67UImHj3Ayxg8ruTtKtNnbjaF8olPq0A==}
     dependencies:
       '@types/prop-types': 15.7.11
       '@types/scheduler': 0.16.8
@@ -2782,7 +2782,7 @@ packages:
       - supports-color
     dev: true
 
-  /drizzle-orm@0.29.4(@types/react@18.2.59)(@vercel/postgres@0.7.2)(pg@8.11.3)(react@18.2.0):
+  /drizzle-orm@0.29.4(@types/react@18.2.60)(@vercel/postgres@0.7.2)(pg@8.11.3)(react@18.2.0):
     resolution: {integrity: sha512-ZnSM8TAxFhzH7p1s3+w3pRE/eKaOeNkH9SKitm717pubDVVcV2I0BCDBPGKV+pe02+wMfw37ntlTcCyo2rA3IA==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
@@ -2853,7 +2853,7 @@ packages:
       sqlite3:
         optional: true
     dependencies:
-      '@types/react': 18.2.59
+      '@types/react': 18.2.60
       '@vercel/postgres': 0.7.2
       pg: 8.11.3
       react: 18.2.0
