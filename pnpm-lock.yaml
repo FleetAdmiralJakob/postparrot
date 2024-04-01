@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@clerk/nextjs':
     specifier: ^4.29.5
-    version: 4.29.9(next@14.1.4)(react-dom@18.2.0)(react@18.2.0)
+    version: 4.29.10(next@14.1.4)(react-dom@18.2.0)(react@18.2.0)
   '@clerk/themes':
     specifier: ^1.7.9
     version: 1.7.10(react@18.2.0)
@@ -190,12 +190,12 @@ packages:
     dependencies:
       regenerator-runtime: 0.14.1
 
-  /@clerk/backend@0.38.3(react@18.2.0):
-    resolution: {integrity: sha512-k14WRljVNETpIYrt99MBP/Zd7KEwkudQKSCEMatQbiRkWgrpwDWE8Czv+JzF1J7sdMiicBI+p2ph9biX1EOFzw==}
+  /@clerk/backend@0.38.4(react@18.2.0):
+    resolution: {integrity: sha512-Cp/vcuFqo3VsoBXWEWONhlzK5gXB3RDBImc5XgA4hvTSDAq7vvn+WYh/ya1eeVZ8g1LMaRx2Wl2OFml3zjGWJA==}
     engines: {node: '>=14'}
     dependencies:
-      '@clerk/shared': 1.3.3(react@18.2.0)
-      '@clerk/types': 3.62.1
+      '@clerk/shared': 1.4.0(react@18.2.0)
+      '@clerk/types': 3.63.0
       '@peculiar/webcrypto': 1.4.1
       '@types/node': 16.18.6
       cookie: 0.5.0
@@ -207,25 +207,25 @@ packages:
       - react
     dev: false
 
-  /@clerk/clerk-react@4.30.7(react@18.2.0):
-    resolution: {integrity: sha512-+6Q1hVteqn66gFLiCKSqqSdz2MBjsEjs1fkGLAEKZC1GdfOKrH6oWcLuSwUdyqRvJWuyjeIgwq15zoHtXKyztA==}
+  /@clerk/clerk-react@4.30.8(react@18.2.0):
+    resolution: {integrity: sha512-MehccfniWs2v7WSx4qGjJYxL+jtnsK6sETrzBuWctb7rLbvv4jDqjalhXbCm8YTV4qG19jHZl/WNsHOXSzBc7Q==}
     engines: {node: '>=14'}
     peerDependencies:
       react: '>=16'
     dependencies:
-      '@clerk/shared': 1.3.3(react@18.2.0)
-      '@clerk/types': 3.62.1
+      '@clerk/shared': 1.4.0(react@18.2.0)
+      '@clerk/types': 3.63.0
       react: 18.2.0
       tslib: 2.4.1
     dev: false
 
-  /@clerk/clerk-sdk-node@4.13.11(react@18.2.0):
-    resolution: {integrity: sha512-6CiRx61SW0B7i+4STlID537LvwFJvNGWxxQZY96OPHQnvYGYsp+9PdEyY4zaQiyLQBLYJt1+uc7VsdSYY5Omww==}
+  /@clerk/clerk-sdk-node@4.13.12(react@18.2.0):
+    resolution: {integrity: sha512-6OluVdh13OwOVk5m+Zgfwph1B/1Zz3AzBepuZubdPmI2r0c1YVOuo/09WJiBRZdglkoIcS0868ZRBsZMrPJDLQ==}
     engines: {node: '>=14'}
     dependencies:
-      '@clerk/backend': 0.38.3(react@18.2.0)
-      '@clerk/shared': 1.3.3(react@18.2.0)
-      '@clerk/types': 3.62.1
+      '@clerk/backend': 0.38.4(react@18.2.0)
+      '@clerk/shared': 1.4.0(react@18.2.0)
+      '@clerk/types': 3.63.0
       '@types/cookies': 0.7.7
       '@types/express': 4.17.14
       '@types/node-fetch': 2.6.2
@@ -236,19 +236,19 @@ packages:
       - react
     dev: false
 
-  /@clerk/nextjs@4.29.9(next@14.1.4)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-RsOz+lxlPYJi9cBvhBRqAUVUOMBT20R3ppt3eof97DkqCT6YaHJx/S13XcYUuo6ojYRDDJ/nI6XiLcfpqIJO6g==}
+  /@clerk/nextjs@4.29.10(next@14.1.4)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-nu8tIzZxxwqFYupBp66BSYSp+qAEUvGUFJ1eAqvgQjOUWh+rElQTfOMI0sm3hOX85sZv04WKA9hiAT93qLILsg==}
     engines: {node: '>=14'}
     peerDependencies:
       next: '>=10'
       react: ^17.0.2 || ^18.0.0-0
       react-dom: ^17.0.2 || ^18.0.0-0
     dependencies:
-      '@clerk/backend': 0.38.3(react@18.2.0)
-      '@clerk/clerk-react': 4.30.7(react@18.2.0)
-      '@clerk/clerk-sdk-node': 4.13.11(react@18.2.0)
-      '@clerk/shared': 1.3.3(react@18.2.0)
-      '@clerk/types': 3.62.1
+      '@clerk/backend': 0.38.4(react@18.2.0)
+      '@clerk/clerk-react': 4.30.8(react@18.2.0)
+      '@clerk/clerk-sdk-node': 4.13.12(react@18.2.0)
+      '@clerk/shared': 1.4.0(react@18.2.0)
+      '@clerk/types': 3.63.0
       next: 14.1.4(react-dom@18.2.0)(react@18.2.0)
       path-to-regexp: 6.2.1
       react: 18.2.0
@@ -256,8 +256,8 @@ packages:
       tslib: 2.4.1
     dev: false
 
-  /@clerk/shared@1.3.3(react@18.2.0):
-    resolution: {integrity: sha512-Eein8cK72dlvY6Q1uFuw9K9MJH1OPjU8FzWloMTKklBo+iPiM6+uENGeGwlY5KId3q/kgPwRc2hBQnUoaijxCQ==}
+  /@clerk/shared@1.4.0(react@18.2.0):
+    resolution: {integrity: sha512-LANWfdw3n7lCN90oY+myuCN74CfGgBQE/T11ry/bTSNVqUxXiYaUlfu5Fkp0GsR4icYiA6NRyROFmYdYZfBMAA==}
     peerDependencies:
       react: '>=16'
     peerDependenciesMeta:
@@ -283,6 +283,13 @@ packages:
 
   /@clerk/types@3.62.1:
     resolution: {integrity: sha512-RmQhWB7EMZw2nE24viQG79VyEUULZYWndYew5oXiZx06DyvysMNCorDyEGRmgBbprv7bnbYhHdOtKmx8Wj0jug==}
+    engines: {node: '>=14'}
+    dependencies:
+      csstype: 3.1.1
+    dev: false
+
+  /@clerk/types@3.63.0:
+    resolution: {integrity: sha512-+32fWK+lUG2u0hVaoQ3aZ+j2T/LhF3yNNylBrkD1Kca/goLb+NB/nmw6Svs0Q810FK/uYgqWlXvABPhgILeQFA==}
     engines: {node: '>=14'}
     dependencies:
       csstype: 3.1.1
@@ -1132,7 +1139,7 @@ packages:
       '@peculiar/json-schema': 1.1.12
       pvtsutils: 1.3.5
       tslib: 2.4.1
-      webcrypto-core: 1.7.8
+      webcrypto-core: 1.7.9
     dev: false
 
   /@pkgjs/parseargs@0.11.0:
@@ -1592,7 +1599,7 @@ packages:
   /@types/eslint-scope@3.7.7:
     resolution: {integrity: sha512-MzMFlSLBqNF2gcHWO0G1vP/YQyfvrxZ0bF+u7mzUdZ1/xK4A4sru+nraZz5i3iEIk1l1uyicaDVTB4QbbEkAYg==}
     dependencies:
-      '@types/eslint': 8.56.6
+      '@types/eslint': 8.56.7
       '@types/estree': 1.0.5
     dev: false
 
@@ -1601,6 +1608,14 @@ packages:
     dependencies:
       '@types/estree': 1.0.5
       '@types/json-schema': 7.0.15
+    dev: true
+
+  /@types/eslint@8.56.7:
+    resolution: {integrity: sha512-SjDvI/x3zsZnOkYZ3lCt9lOZWZLB2jIlNKz+LBgCtDurK0JZcwucxYHn1w2BJkD34dgX9Tjnak0txtq4WTggEA==}
+    dependencies:
+      '@types/estree': 1.0.5
+      '@types/json-schema': 7.0.15
+    dev: false
 
   /@types/estree@1.0.5:
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
@@ -1649,8 +1664,11 @@ packages:
     resolution: {integrity: sha512-/pyBZWSLD2n0dcHE3hq8s8ZvcETHtEuF+3E7XVt0Ig2nvsVQXdghHVcEkIWjy9A0wKfTn97a/PSDYohKIlnP/w==}
     dev: false
 
-  /@types/mime@3.0.4:
-    resolution: {integrity: sha512-iJt33IQnVRkqeqC7PzBHPTC6fDlRNRW8vjrgqtScAhrmMwe8c4Eo7+fUGTa+XdWrpEgpyKWMYmi2dIwMAYRzPw==}
+  /@types/mime@4.0.0:
+    resolution: {integrity: sha512-5eEkJZ/BLvTE3vXGKkWlyTSUVZuzj23Wj8PoyOq2lt5I3CYbiLBOPb3XmCW6QcuOibIUE6emHXHt9E/F/rCa6w==}
+    deprecated: This is a stub types definition. mime provides its own type definitions, so you do not need this installed.
+    dependencies:
+      mime: 4.0.1
     dev: false
 
   /@types/minimatch@5.1.2:
@@ -1672,6 +1690,12 @@ packages:
     resolution: {integrity: sha512-5lcxgB72hlSF7ZS9ZzX1RCLc9+BovxjL17T00xSmj3c0ygZFjPdNnN0RchfGpot/yniVMkWnyO6aR9Dr1q9qrg==}
     dependencies:
       undici-types: 5.26.5
+
+  /@types/node@20.12.2:
+    resolution: {integrity: sha512-zQ0NYO87hyN6Xrclcqp7f8ZbXNbRfoGWNcMvHTPQp9UUrwI0mI7XBz+cu7/W6/VClYo2g63B0cjull/srU7LgQ==}
+    dependencies:
+      undici-types: 5.26.5
+    dev: false
 
   /@types/pg@8.6.6:
     resolution: {integrity: sha512-O2xNmXebtwVekJDD+02udOncjVcMZQuTEQEMpKJ0ZRf5E7/9JJX3izhKUcUifBkyKpljyUM6BTgy2trmviKlpw==}
@@ -1718,7 +1742,7 @@ packages:
     resolution: {integrity: sha512-PDRk21MnK70hja/YF8AHfC7yIsiQHn1rcXx7ijCFBX/k+XQJhQT/gw3xekXKJvx+5SXaMMS8oqQy09Mzvz2TuQ==}
     dependencies:
       '@types/http-errors': 2.0.4
-      '@types/mime': 3.0.4
+      '@types/mime': 4.0.0
       '@types/node': 20.12.1
     dev: false
 
@@ -4116,7 +4140,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 20.12.1
+      '@types/node': 20.12.2
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: false
@@ -4346,6 +4370,12 @@ packages:
     engines: {node: '>= 0.6'}
     dependencies:
       mime-db: 1.52.0
+    dev: false
+
+  /mime@4.0.1:
+    resolution: {integrity: sha512-5lZ5tyrIfliMXzFtkYyekWbtRXObT9OWa8IwQ5uxTBDHucNNwniRqo0yInflj+iYi5CBa6qxadGzGarDfuEOxA==}
+    engines: {node: '>=16'}
+    hasBin: true
     dev: false
 
   /minimatch@3.1.2:
@@ -5480,12 +5510,12 @@ packages:
       jest-worker: 27.5.1
       schema-utils: 3.3.0
       serialize-javascript: 6.0.2
-      terser: 5.30.0
+      terser: 5.30.1
       webpack: 5.91.0(esbuild@0.19.12)
     dev: false
 
-  /terser@5.30.0:
-    resolution: {integrity: sha512-Y/SblUl5kEyEFzhMAQdsxVHh+utAxd4IuRNJzKywY/4uzSogh3G219jqbDDxYu4MXO9CzY3tSEqmZvW6AoEDJw==}
+  /terser@5.30.1:
+    resolution: {integrity: sha512-PJhOnRttZqqmIujxOQOMu4QuFGvh43lR7Youln3k6OJvmxwZ5FxK5rbCEh8XABRCpLf7ZnhrZuclCNCASsScnA==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
@@ -5719,8 +5749,8 @@ packages:
       graceful-fs: 4.2.11
     dev: false
 
-  /webcrypto-core@1.7.8:
-    resolution: {integrity: sha512-eBR98r9nQXTqXt/yDRtInszPMjTaSAMJAFDg2AHsgrnczawT1asx9YNBX6k5p+MekbPF4+s/UJJrr88zsTqkSg==}
+  /webcrypto-core@1.7.9:
+    resolution: {integrity: sha512-FE+a4PPkOmBbgNDIyRmcHhgXn+2ClRl3JzJdDu/P4+B8y81LqKe6RAsI9b3lAOHe1T1BMkSjsRHTYRikImZnVA==}
     dependencies:
       '@peculiar/asn1-schema': 2.3.8
       '@peculiar/json-schema': 1.1.12
