@@ -108,7 +108,7 @@ dependencies:
 devDependencies:
   '@types/eslint':
     specifier: ^8.56.2
-    version: 8.56.6
+    version: 8.56.12
   '@types/node':
     specifier: ^20.11.10
     version: 20.12.1
@@ -1589,8 +1589,8 @@ packages:
       '@types/node': 20.12.1
     dev: false
 
-  /@types/eslint@8.56.6:
-    resolution: {integrity: sha512-ymwc+qb1XkjT/gfoQwxIeHZ6ixH23A+tCT2ADSA/DPVKzAjwYkTXBMCQ/f6fe4wEa85Lhp26VPeUxI7wMhAi7A==}
+  /@types/eslint@8.56.12:
+    resolution: {integrity: sha512-03ruubjWyOHlmljCVoxSuNDdmfZDzsrrz0P2LeJsOXr+ZwFQ+0yQIwNCwt/GYhV7Z31fgtXJTAEs+FYlEL851g==}
     dependencies:
       '@types/estree': 1.0.5
       '@types/json-schema': 7.0.15
