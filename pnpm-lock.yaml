@@ -22,7 +22,7 @@ dependencies:
     version: 1.0.2(@types/react@18.2.73)(react@18.2.0)
   '@serwist/next':
     specifier: ^8.4.4
-    version: 8.4.4(next@14.1.4)(webpack@5.91.0)
+    version: 8.4.4(next@14.1.4)(webpack@5.94.0)
   '@serwist/precaching':
     specifier: ^8.4.4
     version: 8.4.4
@@ -1388,19 +1388,19 @@ packages:
       '@serwist/core': 8.4.4
     dev: false
 
-  /@serwist/next@8.4.4(next@14.1.4)(webpack@5.91.0):
+  /@serwist/next@8.4.4(next@14.1.4)(webpack@5.94.0):
     resolution: {integrity: sha512-WUTMTqjGl4uEO61olHkbqTWCV8bsNSYpzHNmhWksg+RXJJKCENU3Io+UcJlPX+oBJVzlIHP0cHtPsQZx7I+2sw==}
     peerDependencies:
       next: '>=14.0.0'
       webpack: '>=5.9.0'
     dependencies:
       '@serwist/build': 8.4.4
-      '@serwist/webpack-plugin': 8.4.4(webpack@5.91.0)
+      '@serwist/webpack-plugin': 8.4.4(webpack@5.94.0)
       '@serwist/window': 8.4.4
-      clean-webpack-plugin: 4.0.0(webpack@5.91.0)
+      clean-webpack-plugin: 4.0.0(webpack@5.94.0)
       fast-glob: 3.3.2
       next: 14.1.4(react-dom@18.2.0)(react@18.2.0)
-      webpack: 5.91.0(esbuild@0.19.12)
+      webpack: 5.94.0(esbuild@0.19.12)
     dev: false
 
   /@serwist/precaching@8.4.4:
@@ -1445,7 +1445,7 @@ packages:
       '@serwist/strategies': 8.4.4
     dev: false
 
-  /@serwist/webpack-plugin@8.4.4(webpack@5.91.0):
+  /@serwist/webpack-plugin@8.4.4(webpack@5.94.0):
     resolution: {integrity: sha512-A4ONzZzVJNgY3vddhrV7lwRuLYHQQw/SxW8iEZ62VQR3Xvx/sdrovKBJ+cXokt7kIcNgNRtPAxAeddptoirZDw==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
@@ -1454,7 +1454,7 @@ packages:
       '@serwist/build': 8.4.4
       fast-json-stable-stringify: 2.1.0
       upath: 2.0.1
-      webpack: 5.91.0(esbuild@0.19.12)
+      webpack: 5.94.0(esbuild@0.19.12)
     dev: false
 
   /@serwist/window@8.4.4:
@@ -1589,18 +1589,12 @@ packages:
       '@types/node': 20.12.1
     dev: false
 
-  /@types/eslint-scope@3.7.7:
-    resolution: {integrity: sha512-MzMFlSLBqNF2gcHWO0G1vP/YQyfvrxZ0bF+u7mzUdZ1/xK4A4sru+nraZz5i3iEIk1l1uyicaDVTB4QbbEkAYg==}
-    dependencies:
-      '@types/eslint': 8.56.6
-      '@types/estree': 1.0.5
-    dev: false
-
   /@types/eslint@8.56.6:
     resolution: {integrity: sha512-ymwc+qb1XkjT/gfoQwxIeHZ6ixH23A+tCT2ADSA/DPVKzAjwYkTXBMCQ/f6fe4wEa85Lhp26VPeUxI7wMhAi7A==}
     dependencies:
       '@types/estree': 1.0.5
       '@types/json-schema': 7.0.15
+    dev: true
 
   /@types/estree@1.0.5:
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
@@ -2094,8 +2088,8 @@ packages:
     resolution: {integrity: sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==}
     dev: false
 
-  /acorn-import-assertions@1.9.0(acorn@8.11.3):
-    resolution: {integrity: sha512-cmMwop9x+8KFhxvKrKfPYmN6/pKTYYHBqLa0DfvVZcKMJWNyWLnaqND7dx/qn66R7ewM1UX5XMaDVP5wlVTaVA==}
+  /acorn-import-attributes@1.9.5(acorn@8.11.3):
+    resolution: {integrity: sha512-n02Vykv5uA3eHGM/Z2dQrcD56kL8TyDb2p1+0P83PClMnC/nc+anbQRhIOWnSq4Ke/KvDPrY3C9hDtC/A3eHnQ==}
     peerDependencies:
       acorn: ^8
     dependencies:
@@ -2486,14 +2480,14 @@ packages:
     resolution: {integrity: sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==}
     dev: false
 
-  /clean-webpack-plugin@4.0.0(webpack@5.91.0):
+  /clean-webpack-plugin@4.0.0(webpack@5.94.0):
     resolution: {integrity: sha512-WuWE1nyTNAyW5T7oNyys2EN0cfP2fdRxhxnIQWiAp0bMabPdHhoGxM8A6YL2GhqwgrPnnaemVE7nv5XJ2Fhh2w==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       webpack: '>=4.0.0 <6.0.0'
     dependencies:
       del: 4.1.1
-      webpack: 5.91.0(esbuild@0.19.12)
+      webpack: 5.94.0(esbuild@0.19.12)
     dev: false
 
   /cli-color@2.0.4:
@@ -2918,6 +2912,15 @@ packages:
     dependencies:
       graceful-fs: 4.2.11
       tapable: 2.2.1
+    dev: true
+
+  /enhanced-resolve@5.17.1:
+    resolution: {integrity: sha512-LMHl3dXhTcfv8gM4kEzIUeTQ+7fpdA0l2tUf34BddXPkz2A5xJ5L/Pchd5BL6rdccM9QGvu0sWZzK1Z1t4wwyg==}
+    engines: {node: '>=10.13.0'}
+    dependencies:
+      graceful-fs: 4.2.11
+      tapable: 2.2.1
+    dev: false
 
   /env-paths@3.0.0:
     resolution: {integrity: sha512-dtJUTepzMW3Lm/NPxRf3wP4642UWhjL2sQxc+ym2YMj1m/H2zDNQOlezafzkHwn6sMstjHTwG6iQQsctDW/b1A==}
@@ -5459,7 +5462,7 @@ packages:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
     engines: {node: '>=6'}
 
-  /terser-webpack-plugin@5.3.10(esbuild@0.19.12)(webpack@5.91.0):
+  /terser-webpack-plugin@5.3.10(esbuild@0.19.12)(webpack@5.94.0):
     resolution: {integrity: sha512-BKFPWlPDndPs+NGGCr1U59t0XScL5317Y0UReNrHaw9/FwhPENlq6bfgs+4yPfyP51vqC1bQ4rp1EfXW5ZSH9w==}
     engines: {node: '>= 10.13.0'}
     peerDependencies:
@@ -5481,7 +5484,7 @@ packages:
       schema-utils: 3.3.0
       serialize-javascript: 6.0.2
       terser: 5.30.0
-      webpack: 5.91.0(esbuild@0.19.12)
+      webpack: 5.94.0(esbuild@0.19.12)
     dev: false
 
   /terser@5.30.0:
@@ -5738,8 +5741,8 @@ packages:
     engines: {node: '>=10.13.0'}
     dev: false
 
-  /webpack@5.91.0(esbuild@0.19.12):
-    resolution: {integrity: sha512-rzVwlLeBWHJbmgTC/8TvAcu5vpJNII+MelQpylD4jNERPwpBJOE2lEcko1zJX3QJeLjTTAnQxn/OJ8bjDzVQaw==}
+  /webpack@5.94.0(esbuild@0.19.12):
+    resolution: {integrity: sha512-KcsGn50VT+06JH/iunZJedYGUJS5FGjow8wb9c0v5n1Om8O1g4L6LjtfxwlXIATopoQu+vOXXa7gYisWxCoPyg==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     peerDependencies:
@@ -5748,16 +5751,15 @@ packages:
       webpack-cli:
         optional: true
     dependencies:
-      '@types/eslint-scope': 3.7.7
       '@types/estree': 1.0.5
       '@webassemblyjs/ast': 1.12.1
       '@webassemblyjs/wasm-edit': 1.12.1
       '@webassemblyjs/wasm-parser': 1.12.1
       acorn: 8.11.3
-      acorn-import-assertions: 1.9.0(acorn@8.11.3)
+      acorn-import-attributes: 1.9.5(acorn@8.11.3)
       browserslist: 4.23.0
       chrome-trace-event: 1.0.3
-      enhanced-resolve: 5.16.0
+      enhanced-resolve: 5.17.1
       es-module-lexer: 1.5.0
       eslint-scope: 5.1.1
       events: 3.3.0
@@ -5769,7 +5771,7 @@ packages:
       neo-async: 2.6.2
       schema-utils: 3.3.0
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.10(esbuild@0.19.12)(webpack@5.91.0)
+      terser-webpack-plugin: 5.3.10(esbuild@0.19.12)(webpack@5.94.0)
       watchpack: 2.4.1
       webpack-sources: 3.2.3
     transitivePeerDependencies:
