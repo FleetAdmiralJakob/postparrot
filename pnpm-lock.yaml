@@ -13,7 +13,7 @@ dependencies:
     version: 1.7.18(react@18.2.0)
   '@hookform/resolvers':
     specifier: ^3.3.4
-    version: 3.3.4(react-hook-form@7.51.2)
+    version: 3.9.0(react-hook-form@7.51.2)
   '@radix-ui/react-label':
     specifier: ^2.0.2
     version: 2.0.2(@types/react-dom@18.2.23)(@types/react@18.2.73)(react-dom@18.2.0)(react@18.2.0)
@@ -741,8 +741,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@hookform/resolvers@3.3.4(react-hook-form@7.51.2):
-    resolution: {integrity: sha512-o5cgpGOuJYrd+iMKvkttOclgwRW86EsWJZZRC23prf0uU2i48Htq4PuT73AVb9ionFyZrwYEITuOFGF+BydEtQ==}
+  /@hookform/resolvers@3.9.0(react-hook-form@7.51.2):
+    resolution: {integrity: sha512-bU0Gr4EepJ/EQsH/IwEzYLsT/PEj5C0ynLQ4m+GSHS+xKH4TfSelhluTgOaoc4kA5s7eCsQbM4wvZLzELmWzUg==}
     peerDependencies:
       react-hook-form: ^7.0.0
     dependencies:
