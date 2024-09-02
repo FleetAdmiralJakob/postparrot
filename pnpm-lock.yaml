@@ -69,8 +69,8 @@ dependencies:
     specifier: ^1.11.10
     version: 1.11.13
   drizzle-orm:
-    specifier: ^0.30.0
-    version: 0.30.6(@types/react@18.3.5)(@vercel/postgres@0.9.0)(pg@8.12.0)(react@18.3.1)
+    specifier: ^0.33.0
+    version: 0.33.0(@types/react@18.3.5)(@vercel/postgres@0.9.0)(pg@8.12.0)(react@18.3.1)
   lucide-react:
     specifier: ^0.364.0
     version: 0.364.0(react@18.3.1)
@@ -3057,8 +3057,8 @@ packages:
       - supports-color
     dev: true
 
-  /drizzle-orm@0.30.6(@types/react@18.3.5)(@vercel/postgres@0.9.0)(pg@8.12.0)(react@18.3.1):
-    resolution: {integrity: sha512-8RgNUmY7J03GRuRgBV5SaJNbYgLVPjdSWNS/bRkIMIHt2TFCA439lJsNpqYX8asyKMqkw8ceBiamUnCIXZIt9w==}
+  /drizzle-orm@0.33.0(@types/react@18.3.5)(@vercel/postgres@0.9.0)(pg@8.12.0)(react@18.3.1):
+    resolution: {integrity: sha512-SHy72R2Rdkz0LEq0PSG/IdvnT3nGiWuRk+2tXZQ90GVq/XQhpCzu/EFT3V2rox+w8MlkBQxifF8pCStNYnERfA==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
       '@cloudflare/workers-types': '>=3'
@@ -3068,11 +3068,13 @@ packages:
       '@op-engineering/op-sqlite': '>=2'
       '@opentelemetry/api': ^1.4.1
       '@planetscale/database': '>=1'
+      '@prisma/client': '*'
+      '@tidbcloud/serverless': '*'
       '@types/better-sqlite3': '*'
       '@types/pg': '*'
       '@types/react': '>=18'
       '@types/sql.js': '*'
-      '@vercel/postgres': '*'
+      '@vercel/postgres': '>=0.8.0'
       '@xata.io/client': '*'
       better-sqlite3: '>=7'
       bun-types: '*'
@@ -3082,6 +3084,7 @@ packages:
       mysql2: '>=2'
       pg: '>=8'
       postgres: '>=3'
+      prisma: '*'
       react: '>=18'
       sql.js: '>=1'
       sqlite3: '>=5'
@@ -3101,6 +3104,10 @@ packages:
       '@opentelemetry/api':
         optional: true
       '@planetscale/database':
+        optional: true
+      '@prisma/client':
+        optional: true
+      '@tidbcloud/serverless':
         optional: true
       '@types/better-sqlite3':
         optional: true
@@ -3129,6 +3136,8 @@ packages:
       pg:
         optional: true
       postgres:
+        optional: true
+      prisma:
         optional: true
       react:
         optional: true
