@@ -20,7 +20,7 @@
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-slot": "^1.0.2",
     "@serwist/next": "^8.4.4",
-    "@serwist/precaching": "^8.4.4",
+    "@serwist/precaching": "^9.0.0",
     "@serwist/sw": "^8.4.4",
     "@t3-oss/env-nextjs": "^0.11.0",
     "@tanstack/react-query": "^4.36.1",
