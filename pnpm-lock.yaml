@@ -27,8 +27,8 @@ importers:
         specifier: ^8.4.4
         version: 8.4.4(next@14.2.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(webpack@5.94.0(esbuild@0.19.12))
       '@serwist/precaching':
-        specifier: ^8.4.4
-        version: 8.4.4
+        specifier: ^9.0.0
+        version: 9.0.7(typescript@5.5.4)
       '@serwist/sw':
         specifier: ^8.4.4
         version: 8.4.4
@@ -1063,6 +1063,14 @@ packages:
   '@serwist/precaching@8.4.4':
     resolution: {integrity: sha512-2HUiDKRpHxNirH37UnIuLx6Zc6HaIAgpTE2qWT6BfzqX1Fbmn2Zk67tvBTfCITWemCw1/dUH8VzI1k6vC3XmtA==}
     deprecated: This package has been deprecated. Please use serwist instead.
+
+  '@serwist/precaching@9.0.7':
+    resolution: {integrity: sha512-jaM5Gx9+7vWFwrargUh8kIDLUovs17TdvNUx1QlSt0s+8jdgh6AauV+nIV9e9Ap49xqax8RQYlPKLzTSoplO4Q==}
+    peerDependencies:
+      typescript: '>=5.0.0'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
 
   '@serwist/range-requests@8.4.4':
     resolution: {integrity: sha512-1VVhL42XnjFJKszAhgwkCUjcK4j28eudWhfGaYey5NYBk0xNqXNGTOuPBjvr5mLMo/NkmapiwDI/htAqOuK7Wg==}
@@ -3184,6 +3192,14 @@ packages:
   server-only@0.0.1:
     resolution: {integrity: sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA==}
 
+  serwist@9.0.7:
+    resolution: {integrity: sha512-OcvOArMLFYhPWpK5LKqmSsyCS71Egn8SkUZQRBQVUJmAtsI3Aj+ixNDeEvUgyYtFArtvHsVRXgfdg4L5LkhAHA==}
+    peerDependencies:
+      typescript: '>=5.0.0'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   set-function-length@1.2.2:
     resolution: {integrity: sha512-pgRc4hJ4/sNjWCSS9AmnS40x3bNMDTknHgL5UaMBTMyJnU90EgWh1Rz+MC9eFu4BuN/UwZjKQuY/1v3rM7HMfg==}
     engines: {node: '>= 0.4'}
@@ -4266,6 +4282,12 @@ snapshots:
       '@serwist/core': 8.4.4
       '@serwist/routing': 8.4.4
       '@serwist/strategies': 8.4.4
+
+  '@serwist/precaching@9.0.7(typescript@5.5.4)':
+    dependencies:
+      serwist: 9.0.7(typescript@5.5.4)
+    optionalDependencies:
+      typescript: 5.5.4
 
   '@serwist/range-requests@8.4.4':
     dependencies:
@@ -6574,6 +6596,12 @@ snapshots:
       randombytes: 2.1.0
 
   server-only@0.0.1: {}
+
+  serwist@9.0.7(typescript@5.5.4):
+    dependencies:
+      idb: 8.0.0
+    optionalDependencies:
+      typescript: 5.5.4
 
   set-function-length@1.2.2:
     dependencies:
