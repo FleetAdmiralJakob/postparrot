@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@clerk/nextjs':
         specifier: ^4.29.5
-        version: 4.31.4(next@14.2.10(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 4.31.6(next@14.2.10(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@clerk/themes':
         specifier: ^2.0.0
         version: 2.1.27
@@ -179,30 +179,30 @@ packages:
     peerDependencies:
       ajv: '>=8'
 
-  '@clerk/backend@0.38.13':
-    resolution: {integrity: sha512-K6ftfgVmxiA6Bio/0W+Ama/sDVaI8xBV8SbtOHYLARD2k3lpLM3HDnAVPx3AjyDHygsXmhbj/5Ag5o7+EKSCAg==}
+  '@clerk/backend@0.38.14':
+    resolution: {integrity: sha512-hejdtVIy5z5TABDASEJnigrbGnN15JYzJbTjnbpCO8n6Bw2B1DVfR1fsQZw1TaE9HSWh15UCZMjuvtYH0IHciQ==}
     engines: {node: '>=14'}
 
-  '@clerk/clerk-react@4.32.3':
-    resolution: {integrity: sha512-qLKazE3ERUcQwzIaRzLH7BszConlTRsDZuW5hDrFA4T3KNv5ReaFP7W2nW+dvfCz1UC6RC3E4622k1fmfXC6+A==}
+  '@clerk/clerk-react@4.32.4':
+    resolution: {integrity: sha512-QJP4oThzyTpMnZR27r5iwH1Bqh+oBJp5S1D0lRDPB+kmObfSWdzVAePXhD0PCZn/3lkb6UXeoH+T0oSM2ySPSQ==}
     engines: {node: '>=14'}
     peerDependencies:
       react: '>=16'
 
-  '@clerk/clerk-sdk-node@4.13.21':
-    resolution: {integrity: sha512-g9cCaw2ySR/CVFhE5IhL7FC5YdHUFtq8/TUkM8WB5PaxEKV+dhl+JdDJRHFXQm0JwT7inm1pgNXgmyc2eOgRhg==}
+  '@clerk/clerk-sdk-node@4.13.22':
+    resolution: {integrity: sha512-2XwlQ01nK/4cqJsiKFWw5GPZ7l7BChyCobZ6Jd4GZDr65pGhljO3BdKEHA4Dqs/d9H3QJkaZqUAcmpahBaRzug==}
     engines: {node: '>=14'}
 
-  '@clerk/nextjs@4.31.4':
-    resolution: {integrity: sha512-gjuzT01vXi68kLWYUXuLHlBicCsCGU6qtRkRmXFrEU4TpA8o8pc6L8SwJkbwoAGHruFgPtjhaxXE2YM9Ty/Vag==}
+  '@clerk/nextjs@4.31.6':
+    resolution: {integrity: sha512-rGZ687oHrMzWu2zA5HXHVdCp31C7Ltb+pM0Sc6CgJ7KfURbK8GsG2w/Yw2PhntuKoya4y8h03uaXdgfCxGOzMQ==}
     engines: {node: '>=14'}
     peerDependencies:
       next: '>=10'
       react: ^17.0.2 || ^18.0.0-0
       react-dom: ^17.0.2 || ^18.0.0-0
 
-  '@clerk/shared@1.4.1':
-    resolution: {integrity: sha512-3rlZy0Hadnb1dw6x+4MGEC7dpZLlIVY3mZTwWRRS4CILWowVAccwfW84paN2XNlM12lJgMc+w66WNdw19XFtpg==}
+  '@clerk/shared@1.4.2':
+    resolution: {integrity: sha512-R+OkzCtnNU7sn/F6dBfdY5lKs84TN785VZdBBefmyr7zsXcFEqbCcfQzyvgtIS28Ln5SifFEBoAyYR334IXO8w==}
     peerDependencies:
       react: '>=16'
     peerDependenciesMeta:
@@ -213,8 +213,8 @@ packages:
     resolution: {integrity: sha512-BFbSDhhFMTPsWzbEqm/LOOT4ULEin0C7jSngeiCFKjCG246QhsqfEZfwZVrWM7Gzfz/geR6itAtmLSSFDpzAbA==}
     engines: {node: '>=18.17.0'}
 
-  '@clerk/types@3.65.3':
-    resolution: {integrity: sha512-q2BvCBK3H9SxLyoSsybAFTcbW6s50JPY8JACFqzenBbByOyolgIXPJNE0MStUUnNc7lRrPDkoLuZZf71X7JqIw==}
+  '@clerk/types@3.65.4':
+    resolution: {integrity: sha512-sDNt7kp/rYVUF+wJvLPlH+YMm/iKgtARVmTZBU0rgXKPrEKJA1vdmT2UCe4geO1lgqHCi1lXTzm2O90NCWC9yA==}
     engines: {node: '>=14'}
 
   '@clerk/types@4.19.0':
@@ -1184,8 +1184,8 @@ packages:
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
 
-  '@types/express-serve-static-core@4.19.5':
-    resolution: {integrity: sha512-y6W03tvrACO72aijJ5uF02FRq5cgDR9lUxddQ8vyF+GvmjJQqbzDcJngEjURc+ZsG31VI3hODNZJ2URj86pzmg==}
+  '@types/express-serve-static-core@4.19.6':
+    resolution: {integrity: sha512-N4LZ2xG7DatVqhCZzOGb1Yi5lMbXSZcmdLDe9EzSndPV2HpWYWzRbaerl2n27irrm94EPpprqa8KpskPT085+A==}
 
   '@types/express@4.17.14':
     resolution: {integrity: sha512-TEbt+vaPFQ+xpxFLFssxUDXj5cWCxZJjIcB7Yg0k0GMHGtgtQgpvx/MUQUeAkNbA9AAGrwkAsoeItdTgS7FMyg==}
@@ -1223,17 +1223,14 @@ packages:
   '@types/node@20.16.15':
     resolution: {integrity: sha512-DV58qQz9dBMqVVn+qnKwGa51QzCD4YM/tQM16qLKxdf5tqz5W4QwtrMzjSTbabN1cFTSuyxVYBy+QWHjWW8X/g==}
 
-  '@types/node@20.16.2':
-    resolution: {integrity: sha512-91s/n4qUPV/wg8eE9KHYW1kouTfDk2FPGjXbBMfRWP/2vg1rCXNQL1OCabwGs0XSdukuK+MwCDXE30QpSeMUhQ==}
-
   '@types/pg@8.11.6':
     resolution: {integrity: sha512-/2WmmBXHLsfRqzfHW7BNZ8SbYzE8OSk7i3WjFYvfgRHj7S1xj+16Je5fUKv3lVdVzk/zn9TXOqf+avFCFIE0yQ==}
 
   '@types/prop-types@15.7.13':
     resolution: {integrity: sha512-hCZTSvwbzWGvhqxp/RqVqwU999pBf2vp7hzIjiYOsl8wqOmUxkQ6ddw1cV3l8811+kdUFus/q4d1Y3E3SyEifA==}
 
-  '@types/qs@6.9.15':
-    resolution: {integrity: sha512-uXHQKES6DQKKCLh441Xv/dwxOq1TVS3JPUMlEqoEglvlhR6Mxnlew/Xq/LRVHpLyk7iK3zODe1qYHIMltO7XGg==}
+  '@types/qs@6.9.16':
+    resolution: {integrity: sha512-7i+zxXdPD0T4cKDuxCUXJ4wHcsJLwENa6Z3dCu8cfCK743OGy5Nu1RmAGqDPsoTDINVEcdXKRvR/zre+P2Ku1A==}
 
   '@types/range-parser@1.2.7':
     resolution: {integrity: sha512-hKormJbkJqzQGhziax5PItDUTMAM9uE2XXQmM37dyd4hVM+5aVl7oVxMVUiVQn2oCQFN/LKCZdvSM0pFRqbSmQ==}
@@ -2216,8 +2213,8 @@ packages:
     resolution: {integrity: sha512-Ld2g8rrAyMYFXBhEqMz8ZAHBi4J4uS1i/CxGMDnjyFWddMXLVcDp051DZfu+t7+ab7Wv6SMqpWmyFIj5UbfFvg==}
     engines: {node: '>=14'}
 
-  form-data@3.0.1:
-    resolution: {integrity: sha512-RHkBKtLWUVwd7SqRIvCZMEvAMoGUp0XU+seQiZejj0COz3RI3hWP4sCv3gZWWLjJTd7rGwcsF5eKZGii0r/hbg==}
+  form-data@3.0.2:
+    resolution: {integrity: sha512-sJe+TQb2vIaIyO783qN6BlMYWMw3WBOHA1Ay2qxsnjuafEOQFJ2JakedOQirT6D5XPRxDvS7AHYyem9fTpb4LQ==}
     engines: {node: '>= 6'}
 
   fraction.js@4.3.7:
@@ -2854,9 +2851,6 @@ packages:
   path-scurry@1.11.1:
     resolution: {integrity: sha512-Xa4Nw17FS9ApQFJ9umLiJS4orGjm7ZzwUrwamcGQuHSzDyth9boKDaycYdDcZDuqYATXw4HFXgaqWTctW/v1HA==}
     engines: {node: '>=16 || 14 >=14.18'}
-
-  path-to-regexp@6.2.1:
-    resolution: {integrity: sha512-JLyh7xT1kizaEvcaXOQwOc2/Yhw6KZOvPf1S8401UyLk86CU79LN3vl7ztXGm/pZ+YjoyAJ4rxmHwbkBXJX+yw==}
 
   path-type@4.0.0:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
@@ -3559,8 +3553,8 @@ packages:
     resolution: {integrity: sha512-TnbFSbcOCcDgjZ4piURLCbJ3nJhznVh9kw6F6iokjiFPl8ONxe9A6nMDVXDiNbrSfLILs6vB07F7wLBrwPYzJw==}
     engines: {node: '>=10.13.0'}
 
-  webcrypto-core@1.8.0:
-    resolution: {integrity: sha512-kR1UQNH8MD42CYuLzvibfakG5Ew5seG85dMMoAM/1LqvckxaF6pUiidLuraIu4V+YCIFabYecUZAW0TuxAoaqw==}
+  webcrypto-core@1.8.1:
+    resolution: {integrity: sha512-P+x1MvlNCXlKbLSOY4cYrdreqPG5hbzkmawbcXLKN/mf6DZW0SdNNkZ+sjwsqVkI4A4Ko2sPZmkZtCKY58w83A==}
 
   webidl-conversions@4.0.2:
     resolution: {integrity: sha512-YQ+BmxuTgd6UXZW3+ICGfyqRyHXVlD5GtQr5+qjiNW7bF0cqrzX500HVXPBOvgXb5YnzDd+h0zqyv61KUD7+Sg==}
@@ -3660,10 +3654,10 @@ snapshots:
       jsonpointer: 5.0.1
       leven: 3.1.0
 
-  '@clerk/backend@0.38.13(react@18.3.1)':
+  '@clerk/backend@0.38.14(react@18.3.1)':
     dependencies:
-      '@clerk/shared': 1.4.1(react@18.3.1)
-      '@clerk/types': 3.65.3
+      '@clerk/shared': 1.4.2(react@18.3.1)
+      '@clerk/types': 3.65.4
       '@peculiar/webcrypto': 1.4.1
       '@types/node': 16.18.6
       cookie: 0.5.0
@@ -3674,18 +3668,18 @@ snapshots:
     transitivePeerDependencies:
       - react
 
-  '@clerk/clerk-react@4.32.3(react@18.3.1)':
+  '@clerk/clerk-react@4.32.4(react@18.3.1)':
     dependencies:
-      '@clerk/shared': 1.4.1(react@18.3.1)
-      '@clerk/types': 3.65.3
+      '@clerk/shared': 1.4.2(react@18.3.1)
+      '@clerk/types': 3.65.4
       react: 18.3.1
       tslib: 2.4.1
 
-  '@clerk/clerk-sdk-node@4.13.21(react@18.3.1)':
+  '@clerk/clerk-sdk-node@4.13.22(react@18.3.1)':
     dependencies:
-      '@clerk/backend': 0.38.13(react@18.3.1)
-      '@clerk/shared': 1.4.1(react@18.3.1)
-      '@clerk/types': 3.65.3
+      '@clerk/backend': 0.38.14(react@18.3.1)
+      '@clerk/shared': 1.4.2(react@18.3.1)
+      '@clerk/types': 3.65.4
       '@types/cookies': 0.7.7
       '@types/express': 4.17.14
       '@types/node-fetch': 2.6.2
@@ -3695,20 +3689,19 @@ snapshots:
     transitivePeerDependencies:
       - react
 
-  '@clerk/nextjs@4.31.4(next@14.2.10(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@clerk/nextjs@4.31.6(next@14.2.10(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@clerk/backend': 0.38.13(react@18.3.1)
-      '@clerk/clerk-react': 4.32.3(react@18.3.1)
-      '@clerk/clerk-sdk-node': 4.13.21(react@18.3.1)
-      '@clerk/shared': 1.4.1(react@18.3.1)
-      '@clerk/types': 3.65.3
+      '@clerk/backend': 0.38.14(react@18.3.1)
+      '@clerk/clerk-react': 4.32.4(react@18.3.1)
+      '@clerk/clerk-sdk-node': 4.13.22(react@18.3.1)
+      '@clerk/shared': 1.4.2(react@18.3.1)
+      '@clerk/types': 3.65.4
       next: 14.2.10(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      path-to-regexp: 6.2.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       tslib: 2.4.1
 
-  '@clerk/shared@1.4.1(react@18.3.1)':
+  '@clerk/shared@1.4.2(react@18.3.1)':
     dependencies:
       glob-to-regexp: 0.4.1
       js-cookie: 3.0.1
@@ -3721,7 +3714,7 @@ snapshots:
       '@clerk/types': 4.19.0
       tslib: 2.4.1
 
-  '@clerk/types@3.65.3':
+  '@clerk/types@3.65.4':
     dependencies:
       csstype: 3.1.1
 
@@ -4169,7 +4162,7 @@ snapshots:
       '@peculiar/json-schema': 1.1.12
       pvtsutils: 1.3.5
       tslib: 2.4.1
-      webcrypto-core: 1.8.0
+      webcrypto-core: 1.8.1
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
@@ -4436,18 +4429,18 @@ snapshots:
 
   '@types/estree@1.0.6': {}
 
-  '@types/express-serve-static-core@4.19.5':
+  '@types/express-serve-static-core@4.19.6':
     dependencies:
       '@types/node': 20.12.1
-      '@types/qs': 6.9.15
+      '@types/qs': 6.9.16
       '@types/range-parser': 1.2.7
       '@types/send': 0.17.4
 
   '@types/express@4.17.14':
     dependencies:
       '@types/body-parser': 1.19.5
-      '@types/express-serve-static-core': 4.19.5
-      '@types/qs': 6.9.15
+      '@types/express-serve-static-core': 4.19.6
+      '@types/qs': 6.9.16
       '@types/serve-static': 1.15.7
 
   '@types/glob@7.2.0':
@@ -4470,7 +4463,7 @@ snapshots:
   '@types/node-fetch@2.6.2':
     dependencies:
       '@types/node': 20.12.1
-      form-data: 3.0.1
+      form-data: 3.0.2
 
   '@types/node@16.18.6': {}
 
@@ -4482,19 +4475,15 @@ snapshots:
     dependencies:
       undici-types: 6.19.8
 
-  '@types/node@20.16.2':
-    dependencies:
-      undici-types: 6.19.8
-
   '@types/pg@8.11.6':
     dependencies:
-      '@types/node': 20.16.2
+      '@types/node': 20.12.1
       pg-protocol: 1.6.1
       pg-types: 4.0.2
 
   '@types/prop-types@15.7.13': {}
 
-  '@types/qs@6.9.15': {}
+  '@types/qs@6.9.16': {}
 
   '@types/range-parser@1.2.7': {}
 
@@ -4510,7 +4499,7 @@ snapshots:
   '@types/send@0.17.4':
     dependencies:
       '@types/mime': 1.3.5
-      '@types/node': 20.16.2
+      '@types/node': 20.12.1
 
   '@types/serve-static@1.15.7':
     dependencies:
@@ -5716,7 +5705,7 @@ snapshots:
       cross-spawn: 7.0.3
       signal-exit: 4.1.0
 
-  form-data@3.0.1:
+  form-data@3.0.2:
     dependencies:
       asynckit: 0.4.0
       combined-stream: 1.0.8
@@ -6350,8 +6339,6 @@ snapshots:
     dependencies:
       lru-cache: 10.4.3
       minipass: 7.1.2
-
-  path-to-regexp@6.2.1: {}
 
   path-type@4.0.0: {}
 
@@ -7056,7 +7043,7 @@ snapshots:
       glob-to-regexp: 0.4.1
       graceful-fs: 4.2.11
 
-  webcrypto-core@1.8.0:
+  webcrypto-core@1.8.1:
     dependencies:
       '@peculiar/asn1-schema': 2.3.13
       '@peculiar/json-schema': 1.1.12
