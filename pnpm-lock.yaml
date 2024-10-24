@@ -73,7 +73,7 @@ importers:
         version: 1.11.13
       drizzle-orm:
         specifier: ^0.33.0
-        version: 0.33.0(@neondatabase/serverless@0.9.4)(@types/pg@8.11.6)(@types/react@18.3.12)(@vercel/postgres@0.10.0(utf-8-validate@6.0.4))(pg@8.13.0)(react@18.3.1)
+        version: 0.33.0(@neondatabase/serverless@0.9.4)(@types/pg@8.11.6)(@types/react@18.3.12)(@vercel/postgres@0.10.0(utf-8-validate@6.0.4))(pg@8.13.1)(react@18.3.1)
       lucide-react:
         specifier: ^0.453.0
         version: 0.453.0(react@18.3.1)
@@ -143,7 +143,7 @@ importers:
         version: 14.2.16(eslint@9.9.1(jiti@1.21.0))(typescript@5.6.3)
       pg:
         specifier: ^8.11.3
-        version: 8.13.0
+        version: 8.13.1
       postcss:
         specifier: ^8.4.33
         version: 8.4.47
@@ -2839,8 +2839,8 @@ packages:
     resolution: {integrity: sha512-cRL3JpS3lKMGsKaWndugWQoLOCoP+Cic8oseVcbr0qhPzYD5DWXK+RZ9LY9wxRf7RQia4SCwQlXk0q6FCPrVng==}
     engines: {node: '>=10'}
 
-  pg@8.13.0:
-    resolution: {integrity: sha512-34wkUTh3SxTClfoHB3pQ7bIMvw9dpFU1audQQeZG837fmHfHpr14n/AELVDoOYVDW2h5RDWU78tFjkD+erSBsw==}
+  pg@8.13.1:
+    resolution: {integrity: sha512-OUir1A0rPNZlX//c7ksiu7crsGZTKSOXJPgtNiHGIlC9H0lO+NC6ZDYksSgBYY/thSWhnSRBv8w1lieNNGATNQ==}
     engines: {node: '>= 8.0.0'}
     peerDependencies:
       pg-native: '>=3.0.1'
@@ -5073,13 +5073,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.33.0(@neondatabase/serverless@0.9.4)(@types/pg@8.11.6)(@types/react@18.3.12)(@vercel/postgres@0.10.0(utf-8-validate@6.0.4))(pg@8.13.0)(react@18.3.1):
+  drizzle-orm@0.33.0(@neondatabase/serverless@0.9.4)(@types/pg@8.11.6)(@types/react@18.3.12)(@vercel/postgres@0.10.0(utf-8-validate@6.0.4))(pg@8.13.1)(react@18.3.1):
     optionalDependencies:
       '@neondatabase/serverless': 0.9.4
       '@types/pg': 8.11.6
       '@types/react': 18.3.12
       '@vercel/postgres': 0.10.0(utf-8-validate@6.0.4)
-      pg: 8.13.0
+      pg: 8.13.1
       react: 18.3.1
 
   eastasianwidth@0.2.0: {}
@@ -6202,9 +6202,9 @@ snapshots:
 
   pg-numeric@1.0.2: {}
 
-  pg-pool@3.7.0(pg@8.13.0):
+  pg-pool@3.7.0(pg@8.13.1):
     dependencies:
-      pg: 8.13.0
+      pg: 8.13.1
 
   pg-protocol@1.7.0: {}
 
@@ -6226,10 +6226,10 @@ snapshots:
       postgres-interval: 3.0.0
       postgres-range: 1.1.4
 
-  pg@8.13.0:
+  pg@8.13.1:
     dependencies:
       pg-connection-string: 2.7.0
-      pg-pool: 3.7.0(pg@8.13.0)
+      pg-pool: 3.7.0(pg@8.13.1)
       pg-protocol: 1.7.0
       pg-types: 2.2.0
       pgpass: 1.0.5
