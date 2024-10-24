@@ -29,7 +29,7 @@
     "@trpc/react-query": "^10.44.1",
     "@trpc/server": "^10.44.1",
     "@vercel/analytics": "^1.1.2",
-    "@vercel/postgres": "^0.9.0",
+    "@vercel/postgres": "^0.10.0",
     "@vercel/speed-insights": "^1.0.9",
     "class-variance-authority": "^0.7.0",
     "classnames": "^2.5.1",
