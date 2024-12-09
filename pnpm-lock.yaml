@@ -13,7 +13,7 @@ importers:
         version: 4.31.6(next@14.2.20(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@clerk/themes':
         specifier: ^2.0.0
-        version: 2.1.39
+        version: 2.1.53
       '@hookform/resolvers':
         specifier: ^3.3.4
         version: 3.9.1(react-hook-form@7.53.1(react@19.0.0))
@@ -209,16 +209,16 @@ packages:
       react:
         optional: true
 
-  '@clerk/themes@2.1.39':
-    resolution: {integrity: sha512-sa5uO3/77ESsQ/2JrhZsspEKHBhtTgMohtNxsdN/gzJtH+gxs9gVN7ecbnVPAKsSrTjUYdwvWnfOTT+A26Et/g==}
+  '@clerk/themes@2.1.53':
+    resolution: {integrity: sha512-e+y2l6XXqC3tI3KjxrdVBU2bQe4gUyXI/F/TvOgfQBqF159oesKiEK34MrnfYusfWE1EgNhnU/2gcE8HTkq+nw==}
     engines: {node: '>=18.17.0'}
 
   '@clerk/types@3.65.4':
     resolution: {integrity: sha512-sDNt7kp/rYVUF+wJvLPlH+YMm/iKgtARVmTZBU0rgXKPrEKJA1vdmT2UCe4geO1lgqHCi1lXTzm2O90NCWC9yA==}
     engines: {node: '>=14'}
 
-  '@clerk/types@4.28.0':
-    resolution: {integrity: sha512-RPdrUs8HYfhXaZ0MOVBkzy7lilsU9lDVSC88a5o/cEMmTML+BTDfLHMlLG81kgvagSLCKKbl28iocb8y7stm1Q==}
+  '@clerk/types@4.39.0':
+    resolution: {integrity: sha512-WWEoXmcob6X80cZZZGobN8aKjHAjAoL0cgVyLX8UeQ+JW4kl1IfUmZQgDBFOafGEm2yUoKlKAP22bWPDqmbTJw==}
     engines: {node: '>=18.17.0'}
 
   '@drizzle-team/studio@0.0.39':
@@ -3680,16 +3680,16 @@ snapshots:
     optionalDependencies:
       react: 19.0.0
 
-  '@clerk/themes@2.1.39':
+  '@clerk/themes@2.1.53':
     dependencies:
-      '@clerk/types': 4.28.0
+      '@clerk/types': 4.39.0
       tslib: 2.4.1
 
   '@clerk/types@3.65.4':
     dependencies:
       csstype: 3.1.1
 
-  '@clerk/types@4.28.0':
+  '@clerk/types@4.39.0':
     dependencies:
       csstype: 3.1.1
 
