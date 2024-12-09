@@ -28,7 +28,7 @@ importers:
         version: 8.4.4(next@14.2.16(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(webpack@5.94.0(esbuild@0.19.12))
       '@serwist/precaching':
         specifier: ^9.0.0
-        version: 9.0.9(typescript@5.6.3)
+        version: 9.0.11(typescript@5.6.3)
       '@serwist/sw':
         specifier: ^8.4.4
         version: 8.4.4
@@ -1081,8 +1081,8 @@ packages:
     resolution: {integrity: sha512-2HUiDKRpHxNirH37UnIuLx6Zc6HaIAgpTE2qWT6BfzqX1Fbmn2Zk67tvBTfCITWemCw1/dUH8VzI1k6vC3XmtA==}
     deprecated: This package has been deprecated. Please use serwist instead.
 
-  '@serwist/precaching@9.0.9':
-    resolution: {integrity: sha512-+tUlf1gn7SLiUf0aN7PlWVk4D/KxhQitYClisq7AGi9tJK9ZzLtMnXlZEVvnjN57cVcJpakneSJ8tmqDZo86pg==}
+  '@serwist/precaching@9.0.11':
+    resolution: {integrity: sha512-9pYWv+GHdmVHAwIPRksE2fdYrSHlcQeRNGxfWVOlUFaIGuYQ5hng1Caz7k25cxT1RRoGq/EvWbudrTi+L40ihQ==}
     peerDependencies:
       typescript: '>=5.0.0'
     peerDependenciesMeta:
@@ -3171,8 +3171,8 @@ packages:
   server-only@0.0.1:
     resolution: {integrity: sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA==}
 
-  serwist@9.0.9:
-    resolution: {integrity: sha512-T3WzdvUjvK1AzNSTSuZkHWWKm0X5UuUaD3jvukHDFaJDmsLZBq0HGlrZ+bpOHoRFwhJSXwuH/V5ksE0I78wwvQ==}
+  serwist@9.0.11:
+    resolution: {integrity: sha512-oUuyOuIFZoj+ZYdwWnPYVsndOw5CoGsTy106mHJ2wxjnz01TrDhg2l26yrsoJek1qT/Doi0pzknYLLXTIFs5og==}
     peerDependencies:
       typescript: '>=5.0.0'
     peerDependenciesMeta:
@@ -4273,9 +4273,9 @@ snapshots:
       '@serwist/routing': 8.4.4
       '@serwist/strategies': 8.4.4
 
-  '@serwist/precaching@9.0.9(typescript@5.6.3)':
+  '@serwist/precaching@9.0.11(typescript@5.6.3)':
     dependencies:
-      serwist: 9.0.9(typescript@5.6.3)
+      serwist: 9.0.11(typescript@5.6.3)
     optionalDependencies:
       typescript: 5.6.3
 
@@ -6497,7 +6497,7 @@ snapshots:
 
   server-only@0.0.1: {}
 
-  serwist@9.0.9(typescript@5.6.3):
+  serwist@9.0.11(typescript@5.6.3):
     dependencies:
       idb: 8.0.0
     optionalDependencies:
