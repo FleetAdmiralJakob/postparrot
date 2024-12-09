@@ -16,7 +16,7 @@ importers:
         version: 2.1.39
       '@hookform/resolvers':
         specifier: ^3.3.4
-        version: 3.9.0(react-hook-form@7.53.1(react@19.0.0))
+        version: 3.9.1(react-hook-form@7.53.1(react@19.0.0))
       '@radix-ui/react-label':
         specifier: ^2.0.2
         version: 2.1.0(@types/react-dom@19.0.1)(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -679,8 +679,8 @@ packages:
     resolution: {integrity: sha512-BsWiH1yFGjXXS2yvrf5LyuoSIIbPrGUWob917o+BTKuZ7qJdxX8aJLRxs1fS9n6r7vESrq1OUqb68dANcFXuQQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@hookform/resolvers@3.9.0':
-    resolution: {integrity: sha512-bU0Gr4EepJ/EQsH/IwEzYLsT/PEj5C0ynLQ4m+GSHS+xKH4TfSelhluTgOaoc4kA5s7eCsQbM4wvZLzELmWzUg==}
+  '@hookform/resolvers@3.9.1':
+    resolution: {integrity: sha512-ud2HqmGBM0P0IABqoskKWI6PEf6ZDDBZkFqe2Vnl+mTHCEHzr3ISjjZyCwTjC/qpL25JC9aIDkloQejvMeq0ug==}
     peerDependencies:
       react-hook-form: ^7.0.0
 
@@ -3937,7 +3937,7 @@ snapshots:
 
   '@eslint/object-schema@2.1.4': {}
 
-  '@hookform/resolvers@3.9.0(react-hook-form@7.53.1(react@19.0.0))':
+  '@hookform/resolvers@3.9.1(react-hook-form@7.53.1(react@19.0.0))':
     dependencies:
       react-hook-form: 7.53.1(react@19.0.0)
 
