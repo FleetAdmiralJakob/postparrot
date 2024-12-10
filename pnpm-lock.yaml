@@ -30,8 +30,8 @@ importers:
         specifier: ^9.0.0
         version: 9.0.11(typescript@5.7.2)
       '@serwist/sw':
-        specifier: ^8.4.4
-        version: 8.4.4
+        specifier: ^9.0.0
+        version: 9.0.11(typescript@5.7.2)
       '@t3-oss/env-nextjs':
         specifier: ^0.11.0
         version: 0.11.1(typescript@5.7.2)(zod@3.24.0)
@@ -811,10 +811,6 @@ packages:
     resolution: {integrity: sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg==}
     engines: {node: '>=6.0.0'}
 
-  '@jridgewell/gen-mapping@0.3.6':
-    resolution: {integrity: sha512-e8fGuQbA+pfsS2fGGRZgciyzstnkNrZCRIuOzgej9WCxPjHW3fn6h9SoJC3MrvfylMegiJPse94+mBJGf/qltQ==}
-    deprecated: publish failed to build the dist directory
-
   '@jridgewell/resolve-uri@3.1.2':
     resolution: {integrity: sha512-bRISgCIjP20/tbWSPWMEi54QVPRZExkuD9lJL+UIxUKtwVJA8wW1Trb1jMs1RFXo1CBTNZ/5hpC9QvmKWdopKw==}
     engines: {node: '>=6.0.0'}
@@ -825,9 +821,6 @@ packages:
 
   '@jridgewell/source-map@0.3.6':
     resolution: {integrity: sha512-1ZJTZebgqllO79ue2bm3rIGud/bOe0pP5BjSRCRxxYkEZS8STV7zN84UBbiYu7jy+eCKSnVIUgoWWE/tt+shMQ==}
-
-  '@jridgewell/sourcemap-codec@1.4.16-beta.0':
-    resolution: {integrity: sha512-qiZJiTfyb00BApxRU7Apz/3jtlp4gKgOmCXlGQRlIQ5zg6U0uYIb8lZBfbiJ+TxAEJ+rczfY07+CExd8sTRo5w==}
 
   '@jridgewell/sourcemap-codec@1.5.0':
     resolution: {integrity: sha512-gv3ZRaISU3fjPAgNsriBRqGWQL6quFx04YMPW/zD8XMLsU32mhCCbfbO6KZFLjvYpCZ8zyDEgqsgf+PwPaM7GQ==}
@@ -1080,10 +1073,6 @@ packages:
     resolution: {integrity: sha512-nkNLyLmSfiYeJGFtHDzRdLDcUabyTGvrjC2VAlduC97rLhfE1c1KUhWBwBO+ZR0TONsh9roJso2vooEZc2dWAQ==}
     deprecated: This package has been deprecated. Please use serwist instead.
 
-  '@serwist/navigation-preload@8.4.4':
-    resolution: {integrity: sha512-cMna+4avA66mHuZeVBxRYViy7/O+fR+NLSLkSl5TRdx6jdDFBnsBVj6LOWcohuGmtJ/XUV0ycpxyGSUxJCjVag==}
-    deprecated: This package has been deprecated. Please use serwist instead.
-
   '@serwist/next@8.4.4':
     resolution: {integrity: sha512-WUTMTqjGl4uEO61olHkbqTWCV8bsNSYpzHNmhWksg+RXJJKCENU3Io+UcJlPX+oBJVzlIHP0cHtPsQZx7I+2sw==}
     peerDependencies:
@@ -1102,10 +1091,6 @@ packages:
       typescript:
         optional: true
 
-  '@serwist/range-requests@8.4.4':
-    resolution: {integrity: sha512-1VVhL42XnjFJKszAhgwkCUjcK4j28eudWhfGaYey5NYBk0xNqXNGTOuPBjvr5mLMo/NkmapiwDI/htAqOuK7Wg==}
-    deprecated: This package has been deprecated. Please use serwist instead.
-
   '@serwist/routing@8.4.4':
     resolution: {integrity: sha512-TimZ54n5UpQoJMjGdLIXQ1VJlQ669yfJ8scdfZKwRjggILJ3f1rI13N8vicetwZMGqveTz2Q9sVYIXaeQuFmQg==}
     deprecated: This package has been deprecated. Please use serwist instead.
@@ -1114,9 +1099,13 @@ packages:
     resolution: {integrity: sha512-Yr/wKD16vXUqVbyfHhLM25qRWTtWgNJnY8Bot0yjCV/BvHM81cOIkG3sE76FIjcUntCvfemhaN9Zx53fbRzLPQ==}
     deprecated: This package has been deprecated. Please use serwist instead.
 
-  '@serwist/sw@8.4.4':
-    resolution: {integrity: sha512-TyFlhoJpo/S1hj7+j1iiELwoU4idKvqvITBYFzpYEUK3h/qXJ+eiNiGT1hl2R0znz8p35Hp3hxbyGYFt4BYpKw==}
-    deprecated: This package has been deprecated. Please use serwist instead.
+  '@serwist/sw@9.0.11':
+    resolution: {integrity: sha512-IviX3pemS9MR59WCdC9CeRgmlHJj0H54dc+DvtQk42oxmDSua6pzJ8WaUsSB7VoaoJZeR048wC5An4JtgggQ2g==}
+    peerDependencies:
+      typescript: '>=5.0.0'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
 
   '@serwist/webpack-plugin@8.4.4':
     resolution: {integrity: sha512-A4ONzZzVJNgY3vddhrV7lwRuLYHQQw/SxW8iEZ62VQR3Xvx/sdrovKBJ+cXokt7kIcNgNRtPAxAeddptoirZDw==}
@@ -4068,21 +4057,14 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.5.0
       '@jridgewell/trace-mapping': 0.3.25
 
-  '@jridgewell/gen-mapping@0.3.6':
-    dependencies:
-      '@jridgewell/sourcemap-codec': 1.4.16-beta.0
-      '@jridgewell/trace-mapping': 0.3.25
-
   '@jridgewell/resolve-uri@3.1.2': {}
 
   '@jridgewell/set-array@1.2.1': {}
 
   '@jridgewell/source-map@0.3.6':
     dependencies:
-      '@jridgewell/gen-mapping': 0.3.6
+      '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
-
-  '@jridgewell/sourcemap-codec@1.4.16-beta.0': {}
 
   '@jridgewell/sourcemap-codec@1.5.0': {}
 
@@ -4295,10 +4277,6 @@ snapshots:
       '@serwist/routing': 8.4.4
       '@serwist/strategies': 8.4.4
 
-  '@serwist/navigation-preload@8.4.4':
-    dependencies:
-      '@serwist/core': 8.4.4
-
   '@serwist/next@8.4.4(next@14.2.20(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(webpack@5.94.0(esbuild@0.19.12))':
     dependencies:
       '@serwist/build': 8.4.4
@@ -4321,10 +4299,6 @@ snapshots:
     optionalDependencies:
       typescript: 5.7.2
 
-  '@serwist/range-requests@8.4.4':
-    dependencies:
-      '@serwist/core': 8.4.4
-
   '@serwist/routing@8.4.4':
     dependencies:
       '@serwist/core': 8.4.4
@@ -4333,19 +4307,11 @@ snapshots:
     dependencies:
       '@serwist/core': 8.4.4
 
-  '@serwist/sw@8.4.4':
+  '@serwist/sw@9.0.11(typescript@5.7.2)':
     dependencies:
-      '@serwist/background-sync': 8.4.4
-      '@serwist/broadcast-update': 8.4.4
-      '@serwist/cacheable-response': 8.4.4
-      '@serwist/core': 8.4.4
-      '@serwist/expiration': 8.4.4
-      '@serwist/google-analytics': 8.4.4
-      '@serwist/navigation-preload': 8.4.4
-      '@serwist/precaching': 8.4.4
-      '@serwist/range-requests': 8.4.4
-      '@serwist/routing': 8.4.4
-      '@serwist/strategies': 8.4.4
+      serwist: 9.0.11(typescript@5.7.2)
+    optionalDependencies:
+      typescript: 5.7.2
 
   '@serwist/webpack-plugin@8.4.4(webpack@5.94.0(esbuild@0.19.12))':
     dependencies:
