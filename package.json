@@ -35,7 +35,7 @@
     "classnames": "^2.5.1",
     "clsx": "^2.1.0",
     "dayjs": "^1.11.10",
-    "drizzle-orm": "^0.35.0",
+    "drizzle-orm": "^0.38.0",
     "lucide-react": "^0.453.0",
     "next": "^14.1.0",
     "react": "^19.0.0",

@@ -72,8 +72,8 @@ importers:
         specifier: ^1.11.10
         version: 1.11.13
       drizzle-orm:
-        specifier: ^0.35.0
-        version: 0.35.3(@libsql/client-wasm@0.14.0)(@neondatabase/serverless@0.9.4)(@types/pg@8.11.6)(@types/react@19.0.1)(@vercel/postgres@0.10.0(utf-8-validate@6.0.4))(pg@8.13.1)(react@19.0.0)
+        specifier: ^0.38.0
+        version: 0.38.0(@libsql/client-wasm@0.14.0)(@types/pg@8.11.6)(@types/react@19.0.1)(@vercel/postgres@0.10.0(utf-8-validate@6.0.4))(pg@8.13.1)(react@19.0.0)
       lucide-react:
         specifier: ^0.453.0
         version: 0.453.0(react@19.0.0)
@@ -1828,15 +1828,15 @@ packages:
     resolution: {integrity: sha512-0fHv3YIEaUcSVPSGyaaBfOi9bmpajjhbJNdPsRMIUvYdLVxBu9eGjH8mRc3Qk7HVmEidFc/lhG1YyJhoXrn5yA==}
     hasBin: true
 
-  drizzle-orm@0.35.3:
-    resolution: {integrity: sha512-Uv6N+b36x4BaZlxc96e+ag7RnMapBLGhc4SSi2F7RDwqYJipWjaU/P68RUp1FbW9r+mxoDp8nMz2Eece8PJxfA==}
+  drizzle-orm@0.38.0:
+    resolution: {integrity: sha512-Ev1UYKOUxiVwLZZfos4hoNDMDkp313FqF0CHelhR+BeOdb76z/a6pKF6SgYQSrmj6EXH4cy6QIkmuxl2KIFW0A==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
-      '@cloudflare/workers-types': '>=3'
-      '@electric-sql/pglite': '>=0.1.1'
+      '@cloudflare/workers-types': '>=4'
+      '@electric-sql/pglite': '>=0.2.0'
       '@libsql/client': '>=0.10.0'
       '@libsql/client-wasm': '>=0.10.0'
-      '@neondatabase/serverless': '>=0.1'
+      '@neondatabase/serverless': '>=0.10.0'
       '@op-engineering/op-sqlite': '>=2'
       '@opentelemetry/api': ^1.4.1
       '@planetscale/database': '>=1'
@@ -1850,7 +1850,7 @@ packages:
       '@xata.io/client': '*'
       better-sqlite3: '>=7'
       bun-types: '*'
-      expo-sqlite: '>=13.2.0'
+      expo-sqlite: '>=14.0.0'
       knex: '*'
       kysely: '*'
       mysql2: '>=2'
@@ -1868,6 +1868,8 @@ packages:
       '@electric-sql/pglite':
         optional: true
       '@libsql/client':
+        optional: true
+      '@libsql/client-wasm':
         optional: true
       '@neondatabase/serverless':
         optional: true
@@ -4063,10 +4065,12 @@ snapshots:
     dependencies:
       '@libsql/core': 0.14.0
       js-base64: 3.7.7
+    optional: true
 
   '@libsql/core@0.14.0':
     dependencies:
       js-base64: 3.7.7
+    optional: true
 
   '@neondatabase/serverless@0.9.4':
     dependencies:
@@ -5097,11 +5101,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.35.3(@libsql/client-wasm@0.14.0)(@neondatabase/serverless@0.9.4)(@types/pg@8.11.6)(@types/react@19.0.1)(@vercel/postgres@0.10.0(utf-8-validate@6.0.4))(pg@8.13.1)(react@19.0.0):
-    dependencies:
-      '@libsql/client-wasm': 0.14.0
+  drizzle-orm@0.38.0(@libsql/client-wasm@0.14.0)(@types/pg@8.11.6)(@types/react@19.0.1)(@vercel/postgres@0.10.0(utf-8-validate@6.0.4))(pg@8.13.1)(react@19.0.0):
     optionalDependencies:
-      '@neondatabase/serverless': 0.9.4
+      '@libsql/client-wasm': 0.14.0
       '@types/pg': 8.11.6
       '@types/react': 19.0.1
       '@vercel/postgres': 0.10.0(utf-8-validate@6.0.4)
@@ -5932,7 +5934,8 @@ snapshots:
 
   jiti@1.21.6: {}
 
-  js-base64@3.7.7: {}
+  js-base64@3.7.7:
+    optional: true
 
   js-cookie@3.0.1: {}
 
