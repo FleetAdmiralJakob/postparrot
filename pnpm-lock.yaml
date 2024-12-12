@@ -73,7 +73,7 @@ importers:
         version: 1.11.13
       drizzle-orm:
         specifier: ^0.38.0
-        version: 0.38.0(@libsql/client-wasm@0.14.0)(@types/pg@8.11.6)(@types/react@19.0.1)(@vercel/postgres@0.10.0(utf-8-validate@6.0.4))(pg@8.13.1)(react@19.0.0)
+        version: 0.38.1(@libsql/client-wasm@0.14.0)(@types/pg@8.11.6)(@types/react@19.0.1)(@vercel/postgres@0.10.0(utf-8-validate@6.0.4))(pg@8.13.1)(react@19.0.0)
       lucide-react:
         specifier: ^0.468.0
         version: 0.468.0(react@19.0.0)
@@ -809,6 +809,10 @@ packages:
 
   '@jridgewell/gen-mapping@0.3.5':
     resolution: {integrity: sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg==}
+    engines: {node: '>=6.0.0'}
+
+  '@jridgewell/gen-mapping@0.3.8':
+    resolution: {integrity: sha512-imAbBGkb+ebQyxKgzv5Hu2nmROxoDOXHh80evxdoXNOrvAnVx7zimzc1Oo5h9RlfV4vPXaE2iM5pOFbvOCClWA==}
     engines: {node: '>=6.0.0'}
 
   '@jridgewell/resolve-uri@3.1.2':
@@ -1832,8 +1836,8 @@ packages:
     resolution: {integrity: sha512-0fHv3YIEaUcSVPSGyaaBfOi9bmpajjhbJNdPsRMIUvYdLVxBu9eGjH8mRc3Qk7HVmEidFc/lhG1YyJhoXrn5yA==}
     hasBin: true
 
-  drizzle-orm@0.38.0:
-    resolution: {integrity: sha512-Ev1UYKOUxiVwLZZfos4hoNDMDkp313FqF0CHelhR+BeOdb76z/a6pKF6SgYQSrmj6EXH4cy6QIkmuxl2KIFW0A==}
+  drizzle-orm@0.38.1:
+    resolution: {integrity: sha512-TpOzNrPGy7dl0/uP9vKD6ATzp9noJaRYhOYqtOCKxxwSmZqrPxN4SW5kWawVUIcbSd2lkbDCdZue+gtVNLmQsg==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
       '@cloudflare/workers-types': '>=4'
@@ -1934,8 +1938,8 @@ packages:
   electron-to-chromium@1.5.13:
     resolution: {integrity: sha512-lbBcvtIJ4J6sS4tb5TLp1b4LyfCdMkwStzXPyAgVgTRAsep4bvrAGaBOP7ZJtQMNJpSQ9SqG4brWOroNaQtm7Q==}
 
-  electron-to-chromium@1.5.72:
-    resolution: {integrity: sha512-ZpSAUOZ2Izby7qnZluSrAlGgGQzucmFbN0n64dYzocYxnxV5ufurpj3VgEe4cUp7ir9LmeLxNYo8bVnlM8bQHw==}
+  electron-to-chromium@1.5.73:
+    resolution: {integrity: sha512-8wGNxG9tAG5KhGd3eeA0o6ixhiNdgr0DcHWm85XPCphwZgD1lIEoi6t3VERayWao7SF7AAZTw6oARGJeVjH8Kg==}
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -4061,13 +4065,19 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.5.0
       '@jridgewell/trace-mapping': 0.3.25
 
+  '@jridgewell/gen-mapping@0.3.8':
+    dependencies:
+      '@jridgewell/set-array': 1.2.1
+      '@jridgewell/sourcemap-codec': 1.5.0
+      '@jridgewell/trace-mapping': 0.3.25
+
   '@jridgewell/resolve-uri@3.1.2': {}
 
   '@jridgewell/set-array@1.2.1': {}
 
   '@jridgewell/source-map@0.3.6':
     dependencies:
-      '@jridgewell/gen-mapping': 0.3.5
+      '@jridgewell/gen-mapping': 0.3.8
       '@jridgewell/trace-mapping': 0.3.25
 
   '@jridgewell/sourcemap-codec@1.5.0': {}
@@ -4851,7 +4861,7 @@ snapshots:
   browserslist@4.24.2:
     dependencies:
       caniuse-lite: 1.0.30001687
-      electron-to-chromium: 1.5.72
+      electron-to-chromium: 1.5.73
       node-releases: 2.0.19
       update-browserslist-db: 1.1.1(browserslist@4.24.2)
 
@@ -5107,7 +5117,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.38.0(@libsql/client-wasm@0.14.0)(@types/pg@8.11.6)(@types/react@19.0.1)(@vercel/postgres@0.10.0(utf-8-validate@6.0.4))(pg@8.13.1)(react@19.0.0):
+  drizzle-orm@0.38.1(@libsql/client-wasm@0.14.0)(@types/pg@8.11.6)(@types/react@19.0.1)(@vercel/postgres@0.10.0(utf-8-validate@6.0.4))(pg@8.13.1)(react@19.0.0):
     optionalDependencies:
       '@libsql/client-wasm': 0.14.0
       '@types/pg': 8.11.6
@@ -5126,7 +5136,7 @@ snapshots:
 
   electron-to-chromium@1.5.13: {}
 
-  electron-to-chromium@1.5.72: {}
+  electron-to-chromium@1.5.73: {}
 
   emoji-regex@8.0.0: {}
 
