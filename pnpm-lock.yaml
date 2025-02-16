@@ -19,10 +19,10 @@ importers:
         version: 4.1.0(react-hook-form@7.54.2(react@19.0.0))
       '@radix-ui/react-label':
         specifier: ^2.0.2
-        version: 2.1.2(@types/react-dom@19.0.3(@types/react@19.0.8))(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        version: 2.1.2(@types/react-dom@19.0.3(@types/react@19.0.9))(@types/react@19.0.9)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@radix-ui/react-slot':
         specifier: ^1.0.2
-        version: 1.1.2(@types/react@19.0.8)(react@19.0.0)
+        version: 1.1.2(@types/react@19.0.9)(react@19.0.0)
       '@serwist/next':
         specifier: ^8.4.4
         version: 8.4.4(next@14.2.24(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(webpack@5.94.0(esbuild@0.19.12))
@@ -116,10 +116,10 @@ importers:
         version: 22.13.4
       '@types/react':
         specifier: ^19.0.0
-        version: 19.0.8
+        version: 19.0.9
       '@types/react-dom':
         specifier: ^19.0.0
-        version: 19.0.3(@types/react@19.0.8)
+        version: 19.0.3(@types/react@19.0.9)
       '@typescript-eslint/eslint-plugin':
         specifier: ^8.0.0
         version: 8.24.0(@typescript-eslint/parser@8.24.0(eslint@9.9.1(jiti@1.21.7))(typescript@5.7.3))(eslint@9.9.1(jiti@1.21.7))(typescript@5.7.3)
@@ -1266,8 +1266,8 @@ packages:
     peerDependencies:
       '@types/react': ^19.0.0
 
-  '@types/react@19.0.8':
-    resolution: {integrity: sha512-9P/o1IGdfmQxrujGbIMDyYaaCykhLKc0NGCtYcECNUr9UAaDe4gwvV9bR6tvd5Br1SG0j+PBpbKr2UYY8CwqSw==}
+  '@types/react@19.0.9':
+    resolution: {integrity: sha512-FedNTYgmMwSZmD1Sru/W1gJKuiYCN/3SuBkmZkcxX+FpO5zL76B22A9YNfAKg4HQO3Neh/30AiynP6BELdU0qQ==}
 
   '@types/send@0.17.4':
     resolution: {integrity: sha512-x2EM6TJOybec7c52BX0ZspPodMsQUd5L6PRwOunVyVUhXiBSKf3AezDL8Dgvgt5o0UfKNfuA0eMLr2wLT4AiBA==}
@@ -4252,36 +4252,36 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
-  '@radix-ui/react-compose-refs@1.1.1(@types/react@19.0.8)(react@19.0.0)':
+  '@radix-ui/react-compose-refs@1.1.1(@types/react@19.0.9)(react@19.0.0)':
     dependencies:
       react: 19.0.0
     optionalDependencies:
-      '@types/react': 19.0.8
+      '@types/react': 19.0.9
 
-  '@radix-ui/react-label@2.1.2(@types/react-dom@19.0.3(@types/react@19.0.8))(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@radix-ui/react-label@2.1.2(@types/react-dom@19.0.3(@types/react@19.0.9))(@types/react@19.0.9)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
-      '@radix-ui/react-primitive': 2.0.2(@types/react-dom@19.0.3(@types/react@19.0.8))(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@radix-ui/react-primitive': 2.0.2(@types/react-dom@19.0.3(@types/react@19.0.9))(@types/react@19.0.9)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
     optionalDependencies:
-      '@types/react': 19.0.8
-      '@types/react-dom': 19.0.3(@types/react@19.0.8)
+      '@types/react': 19.0.9
+      '@types/react-dom': 19.0.3(@types/react@19.0.9)
 
-  '@radix-ui/react-primitive@2.0.2(@types/react-dom@19.0.3(@types/react@19.0.8))(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@radix-ui/react-primitive@2.0.2(@types/react-dom@19.0.3(@types/react@19.0.9))(@types/react@19.0.9)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
-      '@radix-ui/react-slot': 1.1.2(@types/react@19.0.8)(react@19.0.0)
+      '@radix-ui/react-slot': 1.1.2(@types/react@19.0.9)(react@19.0.0)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
     optionalDependencies:
-      '@types/react': 19.0.8
-      '@types/react-dom': 19.0.3(@types/react@19.0.8)
+      '@types/react': 19.0.9
+      '@types/react-dom': 19.0.3(@types/react@19.0.9)
 
-  '@radix-ui/react-slot@1.1.2(@types/react@19.0.8)(react@19.0.0)':
+  '@radix-ui/react-slot@1.1.2(@types/react@19.0.9)(react@19.0.0)':
     dependencies:
-      '@radix-ui/react-compose-refs': 1.1.1(@types/react@19.0.8)(react@19.0.0)
+      '@radix-ui/react-compose-refs': 1.1.1(@types/react@19.0.9)(react@19.0.0)
       react: 19.0.0
     optionalDependencies:
-      '@types/react': 19.0.8
+      '@types/react': 19.0.9
 
   '@rollup/rollup-android-arm-eabi@4.9.1':
     optional: true
@@ -4567,11 +4567,11 @@ snapshots:
 
   '@types/range-parser@1.2.7': {}
 
-  '@types/react-dom@19.0.3(@types/react@19.0.8)':
+  '@types/react-dom@19.0.3(@types/react@19.0.9)':
     dependencies:
-      '@types/react': 19.0.8
+      '@types/react': 19.0.9
 
-  '@types/react@19.0.8':
+  '@types/react@19.0.9':
     dependencies:
       csstype: 3.1.3
 
